@@ -1,0 +1,148 @@
+/*Mixins */
+=bluelife($time)
+  animation: bluelife $time ease
+  @keyframes bluelife
+    0%
+      transform: scale(1)
+
+    50%  
+      transform: scale(0.9)
+
+    100%
+      transform: scale(1)
+         
+
+=neon-border($color,$hex,$inset,$x,$y)
+  border: 2px solid $color
+  @if $inset == 'true'
+    box-shadow: 0px 0px $x $y $hex, inset 0px 0px $x $y $hex
+  @else if $inset == 'false'
+    box-shadow: 0px 0px $x $y $hex 
+
+=rotateEffect()
+  animation: Rotate 6s ease-in-out infinite 
+
+  @keyframes Rotate
+    0%
+      transform: rotate(0deg)
+    20%
+      transform: rotate(1deg)
+    30%  
+      transform: rotate(2deg)
+    40%
+      transform: rotate(1deg) 
+      transform: skewX(10deg) 
+    50%
+      transform: rotate(0deg)
+    60%
+      transform: rotate(-1deg)
+    73%
+      transform: rotate(-2deg)
+    90%
+      transform: rotate(-1deg)
+      transform: skewX(-10deg)
+    100%
+      transform: rotate(0deg)
+
+=boxEntry($time)
+  animation: expander $time ease-in-out 
+
+  @keyframes expander
+    0% 
+      width: 0
+    30%
+      width: 20%
+    70% 
+      width: 30%
+    100% 
+      width: 600px
+
+=displayNone($time)
+  animation: disp $time ease-in-out
+  @keyframes disp
+    0%
+      opacity: 0
+    30%
+      opacity: 0 
+    70%
+      opacity: 0
+    100%
+      opacity: 1 
+
+=Blink($time)
+  animation: Blink $time ease infinite
+
+  @keyframes Blink
+    0%
+      opacity: 1
+    50% 
+      color: $redAustin
+    100%
+      opacity: 1            
+
+
+header.navbar
+  margin-bottom: 0px
+  border: none
+  padding: 0 0px
+  button.navbar-toggle
+    background: grey
+    width: 50px
+    height: 50px
+    padding-left: 6px
+    &:hover
+      background: $redAustin
+    span
+      transition: all 0.8s ease
+      background: #fff
+      height: 3px
+      width: 35px
+    span:nth-child(2)
+      margin-top: 7px 
+    span:last-child
+      margin-top: 7px
+      transition: all 0.8s ease
+      
+
+
+
+#navbar
+  text-align: center
+  width: 100%
+  background: #fff
+  margin: 0
+  ul
+    li
+      a
+        font-family: 'Pacifico', cursive
+        &:hover
+          color: $redAustin
+          background: #fff
+        &:focus
+          background: #fff  
+
+#navbar
+  ul 
+    li
+      a[href='#portofolio'] 
+        @include Blink(2s)          
+
+.customRotateClass
+  
+  span:nth-child(1)
+    transform: rotate(-45deg)
+    position: relative
+    top: 5px
+  span:nth-child(2) 
+    display: none
+  span:nth-child(3)
+    bottom: 5px
+    transform: rotate(45deg)
+    position: relative        
+           
+
+  
+
+
+
+

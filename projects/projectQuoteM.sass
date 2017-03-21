@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Pacifico|Bubblegum+Sans|Gochi+Hand|Black+Ops+One')
+
+*
+  color: #fff
+  box-sizing: border-box
+  text-decoration: none
+  text-decoration-style: none
+
+a 
+  &:hover, &:active, &:focus
+    color: black 
+  
+
+
+=neon-border($color,$hex,$inset,$x,$y)
+  border: 2px solid $color
+  @if $inset == 'true'
+    box-shadow: 0px 0px $x $y $hex, inset 0px 0px $x $y $hex
+  @else if $inset == 'false'
+    box-shadow: 0px 0px $x $y $hex 
+
+    
+=rotateEffect()
+  animation: Rotate 6s ease-in-out infinite 
+
+  @keyframes Rotate
+    0%
+      transform: rotate(0deg)
+    20%
+      transform: rotate(1deg)
+    30%  
+      transform: rotate(2deg)
+    40%
+      transform: rotate(1deg) 
+      transform: skewX(10deg) 
+    50%
+      transform: rotate(0deg)
+    60%
+      transform: rotate(-1deg)
+    73%
+      transform: rotate(-2deg)
+    90%
+      transform: rotate(-1deg)
+      transform: skewX(-10deg)
+    100%
+      transform: rotate(0deg)
+
+=cursorBlink($time)
+  animation: Blink $time ease infinite
+
+  @keyframes Blink
+    0%
+      opacity: 0
+    50% 
+      opacity: 1
+    100%
+      opacity: 0
+
+=boxEntry($time)
+  animation: expander $time ease-in-out 
+
+  @keyframes expander
+    0% 
+      width: 0
+    30%
+      width: 20%
+    70% 
+      width: 30%
+    100% 
+      width: 600px
+
+=displayNone($time)
+  animation: disp $time ease-in-out
+  @keyframes disp
+    0%
+      opacity: 0
+    30%
+      opacity: 0 
+    70%
+      opacity: 0
+    100%
+      opacity: 1 
+
+
+$pearl1 : #051D29
+$color1: #93EDF5
+$picton-blue: #4BA0E3
+$color2: #d9f2f4
+$cream-canRGBA: rgba(239, 199, 97, 0.78)
+$redAustin: #dd3333
+
+
+/* --------------end/colors */
+main
+  margin: auto
+  width: 100%
+  height: 600px
+  background: $pearl1
+  flex-flow: column nowrap
+  .btn
+    padding: 10px 15px
+    margin: 15px
+    background: $redAustin
+    text-decoration: none
+    text-transform: uppercase
+    text-shadow: none
+    font-family: 'Pacifico'
+    color: black
+    font-size: 30px 
+    @include neon-border(#faa500,$redAustin,'false',4px,2px)
+    
+    line-height: 45px
+    &:hover,&:active,&:focus
+      color: black
+       
+  .block
+    display: flex
+    justify-content: space-around
+    position: relative
+    top: 160px
+    margin: auto
+    width: 600px
+    height: 100px
+    background: $pearl1
+    border-radius: 10px
+    @include neon-border(#faa500,#redAustin,'false',4px,2px) 
+    @include boxEntry(3s)
+ 
+.delayDisplay
+  @include displayNone(3.8s)
+
+
+    
+    
+/* declare some class`s*/
+.neonAndEntry
+  @include neon-border(#faa500,$redAustin,'true',4px,2px)
+  
+
+.addsense
+  width: 800px
+  height: 300px
+  margin: auto
+  position: relative 
+  top: -20px
+
+.addsense2
+  width: 800px
+  height: 300px
+  margin: auto
+  position: relative 
+
+  
+
+.container
+  position: relative
+ 
+  margin: auto
+  margin-top: -200px
+  width: 1000px
+  
+  
+.wrapper
+  border-radius: 210px
+  
+  header
+    background: $pearl1
+    
+    h1
+      @include rotateEffect()
+      color: $redAustin 
+      padding: 10px
+      text-align: center
+      font-family: "Pacifico"
+
+
+
+.backBtn
+    padding: 10px 15px
+    margin: auto
+    position: relative
+    top: 35px
+    left: 10px
+    background: teal
+    text-decoration: none
+    text-transform: uppercase
+    text-shadow: none
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    color: #fff
+    font-weight: bold
+    font-size: 22px
+    text-decoration: none 
+    @include neon-border(teal,blue,'false',4px,2px)  
+    &:hover,&:active,&:focus
+      color: black
+      text-decoration: none
+
+
+.cursor
+  background: trasparent
+  text-shadow: 0px 0px 5px $redAustin
+  color: $redAustin
+  @include cursorBlink(1s)      
+
+blockquote
+  position: relative
+  min-height: 230px
+  margin: 50px 10px 10px 10px 
+  font-size: 30px
+  text-decoration: none
+  text-decoration-style: none
+  border: none
+    
+.author
+  position: relative
+  margin-top: 10px
+  top: 50px
+  float: right
+  font-size: 40px
+ 
+ 
+.warning
+  padding-top: 10px
+  text-align: center
+  color: black
+  background: $redAustin
+  font-weight: bold
+  text-transform: uppercase
+  text-shadow: none
+  
+
+.parantezeDrepte
+  &::before
+    content: "["
+  &::after
+    content: "]"      
+  &:focus,&:active,&:hover
+    text-decoration: none
+    color: $redAustin 

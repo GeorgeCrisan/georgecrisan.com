@@ -1,0 +1,10 @@
+bootstrap 3.3.7
+jquery 1.12.4
+
+images links proofs
+https://github.com/jonathantneal/flexibility
+
+
+https://pixabay.com/en/work-place-laptop-notebook-macbook-677582/  for work-677582_1280.jpg
+
+https://pixabay.com/en/coming-soon-soon-coming-sign-1604663/ coming soon image for coming-soon-1604663_640.png
