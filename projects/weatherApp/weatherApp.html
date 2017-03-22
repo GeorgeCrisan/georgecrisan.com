@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="#/favico.ico">
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="weatherApp.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--if lt IE 10
@@ -21,16 +23,15 @@
   <body>
     <!-- background-->
     <div class="bg"> </div>
-    <h3>Loading Info ...</h3>
     <div class="mainWrapper">
+      <h3>Loading Info ...  <i class="fa fa-times fa-spin"></i></h3>
       <!--header-->
       <header class="header">
-        <button>Go</button>
         <h2 id="location">
            City, Country</h2>
         <h3 id="latAndLong">
            Lat: xx.xxxx , Lon: -xx.xxxx</h3>
-        <h3 id="date">Weekday, Month XX XXXX  </h3>
+        <h4 id="date">Weekday, Month XX XXXX  </h4>
       </header>
       <!--artile contain icon and Info-->
       <article class="main"> <i class="wi wi-na" id="conditionIcon"> </i>
@@ -39,14 +40,20 @@
       </article>
       <!--aside for the extra info-->
       <aside class="aside aside-1">  <span id="temp">XX&deg;F </span>
-        <button class="btn btn-primary">Show in &deg; <span>C     </span></button>
-        <div class="containerFXI">
-          <!-- PRESSURE-->
-          <div class="span"><i class="icon wi wi-barometer"></i><br>        Pressure: <br><span id="pressure">XXXX</span> hPa</div>
-          <!-- HUMIDITY-->
-          <div class="span"><i class="icon wi wi-humidity"></i><br>        Humidity: <br><span id="humidity">XX</span>%</div>
-          <!-- WIND-->
-          <div class="span"><i class="icon wi wi-strong-wind"></i><br>        Wind: <br><span id="wind">X.X km/h</span></div>
+        <button>Show in:  &nbsp; &deg; <span>C&nbsp;&nbsp;     </span></button>
+      </aside>
+      <aside class="containerFXI">
+        <div class="span"><i class="icon wi wi-barometer"></i>
+          <p>Pressure: </p><span id="pressure">
+            <p>XXXX&nbsp;&nbsp;hPa</p></span>
+        </div>
+        <div class="span"><i class="icon wi wi-humidity"></i>
+          <p>Humidity: </p><span id="humidity">
+            <p>XX&nbsp;&nbsp;%</p></span>
+        </div>
+        <div class="span"><i class="icon wi wi-strong-wind"></i>
+          <p>Wind:</p><span id="wind">
+            <p>X.X &nbsp;&nbsp;km/h</p></span>
         </div>
       </aside>
     </div>
