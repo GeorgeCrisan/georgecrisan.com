@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Local Wheather </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Local Wheather by George Crisan">
+    <meta name="robots" contet="index,follow">
+    <meta name="author" content="George Crisan at georgerdp@gmail.com">
+    <link rel="shortcut icon" href="#/favico.ico">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="weatherApp.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--if lt IE 10
+    script(src='../../js/html5shiv.min.js')
+    script(src='../../js/respond.min.js')
+    -->
+  </head>
+  <body>
+    <!-- background-->
+    <div class="bg"> </div>
+    <h3>Loading Info ...</h3>
+    <div class="mainWrapper">
+      <!--header-->
+      <header class="header">
+        <button>Go</button>
+        <h2 id="location">
+           City, Country</h2>
+        <h3 id="latAndLong">
+           Lat: xx.xxxx , Lon: -xx.xxxx</h3>
+        <h3 id="date">Weekday, Month XX XXXX  </h3>
+      </header>
+      <!--artile contain icon and Info-->
+      <article class="main"> <i class="wi wi-na" id="conditionIcon"> </i>
+        <p id="condition">
+           Condition is loading ...</p>
+      </article>
+      <!--aside for the extra info-->
+      <aside class="aside aside-1">  <span id="temp">XX&deg;F </span>
+        <button class="btn btn-primary">Show in &deg; <span>C     </span></button>
+        <div class="containerFXI">
+          <!-- PRESSURE-->
+          <div class="span"><i class="icon wi wi-barometer"></i><br>        Pressure: <br><span id="pressure">XXXX</span> hPa</div>
+          <!-- HUMIDITY-->
+          <div class="span"><i class="icon wi wi-humidity"></i><br>        Humidity: <br><span id="humidity">XX</span>%</div>
+          <!-- WIND-->
+          <div class="span"><i class="icon wi wi-strong-wind"></i><br>        Wind: <br><span id="wind">X.X km/h</span></div>
+        </div>
+      </aside>
+    </div>
+    <div class="addsense">
+      <!--script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')-->
+      <!--ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2372442392819950', data-ad-slot='7950479822', data-ad-format='auto')-->
+      <!--script.
+      //(adsbygoogle = window.adsbygoogle || []).push({});    
+      
+      -->
+    </div>
+    <script src="../../js/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../js/flexibility.js" type="text/javascript"></script>
+    <script src="../../js/rdpJs.js" type="text/javascript"></script>
+    <script src="../../js/html5shiv.min.js"> </script>
+  </body>
+</html>

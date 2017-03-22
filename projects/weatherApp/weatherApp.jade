@@ -1,0 +1,88 @@
+
+doctype html
+html(lang='en')
+  head
+    title Local Wheather 
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='Local Wheather by George Crisan')
+    meta(name='robots', contet='index,follow')
+    meta(name='author', content='George Crisan at georgerdp@gmail.com')
+    link(rel='shortcut icon', href='#/favico.ico')
+    link(href='../../css/bootstrap.min.css', rel='stylesheet')
+    link(href='weatherApp.css', rel='stylesheet')
+    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 10
+      script(src='../../js/html5shiv.min.js')
+      script(src='../../js/respond.min.js')
+  body
+    // background
+    .bg 
+    h3.
+      Loading Info ...
+    .mainWrapper
+      //header
+      header.header
+        button Go
+        h2#location  
+          | City, Country
+        h3#latAndLong 
+          | Lat: xx.xxxx , Lon: -xx.xxxx
+        h3#date
+          | Weekday, Month XX XXXX  
+      //artile contain icon and Info
+      article.main 
+        i#conditionIcon.wi.wi-na 
+        p#condition 
+          | Condition is loading ...
+      //aside for the extra info
+      aside.aside.aside-1   
+        span#temp XX&deg;F 
+        button.btn.btn-primary
+          | Show in &deg; 
+          span C     
+        .containerFXI
+          // PRESSURE
+          .span
+            i.icon.wi.wi-barometer
+            br
+            |         Pressure: 
+            br
+            span#pressure XXXX
+            |  hPa
+          // HUMIDITY
+          .span
+            i.icon.wi.wi-humidity
+            br
+            |         Humidity: 
+            br
+            span#humidity XX
+            | %
+          // WIND
+          .span
+            i.icon.wi.wi-strong-wind
+            br
+            |         Wind: 
+            br
+            span#wind X.X km/h
+            
+
+
+        
+
+
+
+    .addsense
+      //script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      //ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2372442392819950', data-ad-slot='7950479822', data-ad-format='auto')
+      //script.
+        //(adsbygoogle = window.adsbygoogle || []).push({});    
+
+    script(src='../../js/jquery-1.12.4.min.js', type='text/javascript')
+    script(src='../../js/jquery-ui.min.js', type='text/javascript')
+    script(src='../../js/bootstrap.min.js', type='text/javascript')
+    script(src='../../js/flexibility.js', type='text/javascript')
+    script(src='../../js/rdpJs.js', type='text/javascript')
+    script(src='../../js/html5shiv.min.js')  
