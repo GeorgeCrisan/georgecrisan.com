@@ -1,0 +1,145 @@
+'use strict';
+jQuery(function () {
+
+  function getIpInfo(url) { //get ip info
+    return new Promise(function (resolve, reject) {
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        resolve(this.responseText);
+      };
+      xhr.onerror = reject;
+      xhr.open('GET', url);
+      xhr.send();
+
+    }); // end of Promise
+  } // end of get Ip Info
+
+  getIpInfo('http://ip-api.com/json').then(function (result) {
+
+    let userData = JSON.parse(result),
+      apiKey = '&APPID=29c36cf2524b2fe81f752daf790a2dd8',
+      baseWeatherRequest = 'http://api.openweathermap.org/data/2.5/weather?',
+      parametri = 'lat=' + userData.lat + '&lon=' + userData.lon;
+
+
+    console.log(parametri);
+    console.log(userData);
+
+    function getWD(url) {
+      return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          resolve(this.responseText);
+        };
+        xhr.onerror = reject;
+        xhr.open("GET", url);
+        xhr.send();
+      });
+    }
+
+    getWD(baseWeatherRequest + parametri + apiKey).then(function (result) {
+      var weatherData = JSON.parse(result);
+      console.log(weatherData);
+      //Here I have the weather data and I can do my madness
+      $('#location').html(userData.city + ", " + userData.country);
+      $('#latAndLong').html("Lat: " + userData.lat.toFixed(2) + ", " + "Lon: " + userData.lon.toFixed(2));
+      $('#temp').html(Math.round(weatherData.main.temp - 273.15) + "&deg; C");
+      $('#humidity').html(weatherData.main.humidity);
+      $('#humidity').html(weatherData.main.humidity + " %");
+      $('#pressure').html(weatherData.main.pressure + " hPa");
+      $('#wind').html(weatherData.wind.speed + " km/h");
+      $('#conditionIcon').removeClass('wi-na').addClass('wi-owm-' + weatherData.weather[0].id);
+      var dataWID = weatherData.weather[0].id;
+
+  var today = new Date();
+  var h = today.getHours();
+  console.log(h);
+
+
+
+        if(dataWID >= 800 && dataWID <= 815)
+          $(".bg").css('background-image','url("img/csd800.jpg")');
+        else if (dataWID === 800 && h > 21 && h < 5) 
+          $(".bg").css('background-image','url("img/csn800.jpg")'); 
+        else if (dataWID >= 300 && dataWID <= 599)
+          $(".bg").css('background-image','url("img/rd500.jpg")');  
+          else if (dataWID >= 300 && dataWID <= 599 && h > 21 && h < 5)
+           $(".bg").css('background-image','url("img/rn500.jpg")'); 
+         else if (dataWID >= 600 && dataWID <= 699)
+          $(".bg").css('background-image','url("img/sd600.jpg")');  
+          else if (dataWID >= 600 && dataWID <= 699 && h > 21 && h < 5)
+           $(".bg").css('background-image','url("img/sn600.jpg")');   
+
+
+
+      function toUp(el) { /*function to do first letter upperCase */
+        var firstStep = el.charAt(0).toUpperCase();
+        var secondStep = el.slice(1);
+
+        return firstStep.concat(secondStep);
+      }
+
+      let condition = toUp(weatherData.weather[0].description + " !");
+      $('#condition').html(condition);
+   /* function for temperature */
+      var unit = "metric";
+      var temp = Math.round(weatherData.main.temp - 273.15);
+
+$('#button').click(function(){
+   if(unit === "imperial"){ 
+   $('#button').html("Show in:<span> &deg; F </span>");
+     unit = "metric";
+     function toCelsius(f) {
+       return Math.round((5/9) * (f-32));
+    }
+      temp = toCelsius(temp);
+      $('#temp').html(temp +"&deg;&nbsp;&nbsp;C" ); 
+     
+     }
+else  if(unit === "metric"){
+    $('#button').html("Show in:<span> &deg; C </span>");
+     
+  function toFahrenheit(f){
+      return Math.round(( f * (9/5)) + 32);
+     }
+     temp = toFahrenheit(temp);
+     unit = "imperial";
+  $('#temp').html(temp +"&deg;&nbsp;&nbsp;F" ); 
+  }
+    
+  
+  
+});
+
+
+    }).catch(function (error) {
+      console.log(error + "Failed to get weatherData");
+    });
+
+  }).catch(function (error) {
+    console.log(error + "Faild to get Ip info");
+  });
+
+
+  /* Function for the date */
+  (function () {
+    let dateNow = new Date(),
+      dateObj = {
+        day: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+      },
+      day = dateObj.day[dateNow.getDay()],
+      month = dateObj.month[dateNow.getMonth()];
+
+
+
+    $('#date').html(day + " " + month + " " + dateNow.getFullYear());
+
+  })(); // end of iife
+
+
+
+
+
+
+}); //end of jquery statement
