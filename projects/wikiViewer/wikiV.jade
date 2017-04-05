@@ -1,0 +1,48 @@
+
+doctype html
+html(lang='en')
+  head
+    title Wikipedia Viewer
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='Wikipedia Viewer')
+    meta(name='robots', contet='index,follow')
+    meta(name='author', content='George Crisan at georgerdp@gmail.com')
+    link(rel='shortcut icon', href='#/favico.ico')
+    link(href='../../css/bootstrap.min.css', rel='stylesheet')
+    link(href='wikiV.css', rel='stylesheet')
+    link(rel="stylesheet", href="../../css/fa/css/font-awesome.min.css")
+    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 10
+      script(src='../../js/html5shiv.min.js')
+      script(src='../../js/respond.min.js')
+  body
+    .main-wrapper
+      .section
+        h1
+          |Search The Wikipedia
+        .search-bar
+          input#search(placeholder="Type and search ")
+          #button
+            i.fa.fa-search
+        .a-container
+          a.randomArticle(href="https://en.wikipedia.org/wiki/Special:Random", target="_blank")
+            | Generate Random Article
+
+  
+    
+  
+    .addsense
+      //script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      //ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2372442392819950', data-ad-slot='7950479822', data-ad-format='auto')
+      //script.
+        //(adsbygoogle = window.adsbygoogle || []).push({});    
+
+    script(src='../../js/jquery-3.2.0.min.js', type='text/javascript')
+    script(src='../../js/jquery-ui.min.js', type='text/javascript')
+    script(src='../../js/bootstrap.min.js', type='text/javascript')
+    script(src='../../js/flexibility.js', type='text/javascript')
+    script(src='wikiV.js', type='text/javascript')
+    script(src='../../js/html5shiv.min.js')  
