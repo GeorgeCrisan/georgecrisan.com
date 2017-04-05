@@ -100,11 +100,11 @@
     .flex-wrapper
       display: flex
       flex-flow: row wrap
-      justify-content: center
+      justify-content: space-around
       .flex-element
-        flex: 1 1 31%
-        max-width: 235px
-        min-width: 200px
+        flex: 1 1 30%
+        max-width: 180px
+        min-width: 160px
         margin: 10px
         min-height: 160px
         max-height: 100px
@@ -200,7 +200,11 @@
               text-align: center
 
   #Footer
-    margin-top: 340px
+    padding-top: 190px
+
+@media (max-width:600px)  
+  #Footer
+    padding-top: 160px  
 
 @media (max-width: 400px)
   
@@ -227,12 +231,13 @@
     .flex-wrapper
       display: flex
       flex-flow: row wrap
-      justify-content: center
+      justify-content: space-around
       .flex-element
-        flex: 1 0 auto
-        max-width: 125px
+        flex: 1 1 auto
         min-width: 125px
-        margin: 5px
+        max-width: 136px
+        
+        margin: 10px 0 5px 0
         min-height: 120px
         max-height: 120px
         border: 1px solid #fff
@@ -343,4 +348,4 @@
               text-align: center
 
   #Footer
-    margin-top: 350px
+    padding-top: 170px

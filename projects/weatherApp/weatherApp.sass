@@ -17,7 +17,7 @@ html
   padding: 0
 *
   box-sizing: border-box
-  font-family: "Pacifico", sans-serif, Verdana, Geneva, Tahoma, sans-serif
+  font-family: "Fira Sans", sans-serif, Verdana, Geneva, Tahoma
   color: black
 body
   margin: 0
@@ -26,7 +26,8 @@ body
   span 
     text-align: center
   #button
-    text-align: center  
+    text-align: center 
+    cursor: pointer 
     span
       color: #333 
 
@@ -97,16 +98,16 @@ body
     background: rgba(255,255,255,0)
     border: 3px solid #fff
     height: 60px
-    line-height: 45px
+    line-height: 55px
     font-size: 20px
     font-weight: bold
     align-self: center
-    font-family: "Fira Sans", Verdana, Geneva, Tahoma, sans-serif
+    font-family: "Fira Sans",sans-serif, Verdana, Geneva, Tahoma
     position: relative
     min-width: 170px
     top: 10px
     &:hover,&:focus
-      background-color: rgba(253,451,555,0.5)
+      background-color: rgba(222,451,12,0.5)
       span
         color: black
       
@@ -114,7 +115,7 @@ body
       font-size: 25px
       font-weight: bold
       position: relative
-      top: 4px
+      top: 0px
       color: white
 
 .main
@@ -153,13 +154,13 @@ body
     
   .span
     padding: 30px
-    font-size: 18px
+    font-size: 24px
     text-align: center
     width: 33%
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: "Fira Sans",sans-serif, Verdana, Geneva, Tahoma
     i 
       color: #fff
-      font-size: 40px
+      font-size: 45px
       padding-bottom: 20px 
     p 
       color: black
@@ -169,6 +170,9 @@ body
 
 
 @media (max-width: 900px )
+  #transparentWrapper
+    top: 70px
+    margin: 0px 20px 20px 20px
   .containerFXI
     padding: 30px 0 0px 0
     display: flex
@@ -223,20 +227,21 @@ body
       border: 1px solid #fff
       height: 50px
       line-height: 50px
-      font-size: 18px
+      font-size: 20px
       font-weight: bold
       align-self: center
       font-family: "Fira Sans", Verdana, Geneva, Tahoma, sans-serif
       position: relative
       min-width: 120px
       &:hover,&:focus
-        background-color: rgba(25,451,555,0.5)
+        background-color: rgba(222,451,12,0.5)
         
       span 
         font-size: 20px
         font-weight: bold
-        position: relative
-        top: 2px
+        color: black
+
+
   
   .main
     margin: auto
@@ -262,8 +267,9 @@ body
 
 @media (max-width: 550px )
   #transparentWrapper
-    top: 80px
-    margin-top: -20px
+    top: 70px
+    margin: 0px 20px 20px 20px
+  
 
     display: block
     #app-status
@@ -314,7 +320,7 @@ body
       border: 1px solid #fff
       height: 70px
       line-height: 70px
-      width: 140px
+      width: 150px
       margin: auto
       font-size: 20px
       font-weight: bold
@@ -369,7 +375,7 @@ body
       font-size: 18px
       text-align: center
       width: 32.3%
-      font-family: Verdana, Geneva, Tahoma, sans-serif
+      font-family: "Fira Sans",sans-serif, Verdana, Geneva, Tahoma
       i 
         color: #fff
         font-size: 40px

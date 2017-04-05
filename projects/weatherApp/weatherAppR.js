@@ -58,17 +58,17 @@ jQuery(function () {
 
 
         if(dataWID >= 800 && dataWID <= 815)
-          $(".bg").css('background-image','url("img/csd800.jpg")');
-        else if (dataWID === 800 && h > 21 && h < 5) 
-          $(".bg").css('background-image','url("img/csn800.jpg")'); 
-        else if (dataWID >= 300 && dataWID <= 599)
-          $(".bg").css('background-image','url("img/rd500.jpg")');  
-          else if (dataWID >= 300 && dataWID <= 599 && h > 21 && h < 5)
-           $(".bg").css('background-image','url("img/rn500.jpg")'); 
-         else if (dataWID >= 600 && dataWID <= 699)
-          $(".bg").css('background-image','url("img/sd600.jpg")');  
-          else if (dataWID >= 600 && dataWID <= 699 && h > 21 && h < 5)
-           $(".bg").css('background-image','url("img/sn600.jpg")');   
+          $(".bg").css('background-image','url("https://github.com/GeorgeCrisan/georgecrisan.com/blob/master/projects/weatherApp/img/csd800.jpg?raw=true")');
+        if (dataWID >= 800 && dataWID <= 815 && h >= 19  ) 
+          $(".bg").css('background-image','url("https://github.com/GeorgeCrisan/georgecrisan.com/blob/master/projects/weatherApp/img/csn800.jpg?raw=true")'); 
+        if (dataWID >= 300 && dataWID <= 599)
+          $(".bg").css('background-image','url("https://github.com/GeorgeCrisan/georgecrisan.com/blob/master/projects/weatherApp/img/rd500.jpg?raw=true")');  
+        if (dataWID >= 300 && dataWID <= 599 && h > 19)
+           $(".bg").css('background-image','url("https://github.com/GeorgeCrisan/georgecrisan.com/blob/master/projects/weatherApp/img/rn500.jpg?raw=true")'); 
+        if (dataWID >= 600 && dataWID <= 699)
+          $(".bg").css('background-image','url("https://github.com/GeorgeCrisan/georgecrisan.com/blob/master/projects/weatherApp/img/sd600.jpg?raw=true")');  
+        if (dataWID >= 600 && dataWID <= 699 && h > 19)
+           $(".bg").css('background-image','url("https://github.com/GeorgeCrisan/georgecrisan.com/blob/master/projects/weatherApp/img/sn600.jpg?raw=true")');    
 
 
 
