@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Aldrich|Pacifico|Bubblegum+Sans|Gochi+Hand|Black+Ops+One')
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Pacifico|Bubblegum+Sans|Gochi+Hand|Black+Ops+One')
 
 *
   color: #fff
@@ -100,18 +100,22 @@ main
   .btn
     padding: 10px 15px
     margin: 15px
-    background: $redAustin
+    background: rgba(333,333,222,0.5)
     text-decoration: none
     text-transform: uppercase
     text-shadow: none
-    font-family: 'Pacifico'
+    font-family: 'Fira Sans',sans-serif, 'Times New Roman', Times, serif
     color: black
     font-size: 30px 
-    @include neon-border(#faa500,$redAustin,'false',4px,2px)
+    @include neon-border(#faa500,grey,'false',4px,2px)
     
     line-height: 45px
-    &:hover,&:active,&:focus
-      color: black
+    &:focus
+      color: black  
+    &:hover
+      color: #fff
+      background: $picton-blue
+    
        
   .block
     display: flex
@@ -122,8 +126,8 @@ main
     width: 600px
     height: 100px
     background: $pearl1
-    border-radius: 10px
-    @include neon-border(#faa500,#redAustin,'false',4px,2px) 
+    border-radius: 0px
+    @include neon-border(#faa500,grey,'false',4px,2px) 
     @include boxEntry(3s)
  
 .delayDisplay
@@ -134,7 +138,7 @@ main
     
 /* declare some class`s*/
 .neonAndEntry
-  @include neon-border(#faa500,$redAustin,'true',4px,2px)
+  @include neon-border(#faa500,grey,'true',1px,3px)
   
 
 .addsense
@@ -161,17 +165,17 @@ main
   
   
 .wrapper
-  border-radius: 210px
+  border-radius: 1px
   
   header
     background: $pearl1
     
     h1
       @include rotateEffect()
-      color: $redAustin 
+      color: $picton-blue
       padding: 10px
       text-align: center
-      font-family: "Pacifico"
+      font-family: "Pacifico",sans-serif
 
 
 
@@ -198,8 +202,8 @@ main
 
 .cursor
   background: trasparent
-  text-shadow: 0px 0px 5px $redAustin
-  color: $redAustin
+  text-shadow: 1px 1px 5px #fff
+  color: $picton-blue
   @include cursorBlink(1s)      
 
 blockquote
@@ -237,3 +241,6 @@ blockquote
   &:focus,&:active,&:hover
     text-decoration: none
     color: $redAustin 
+
+      
+      
