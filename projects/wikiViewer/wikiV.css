@@ -69,11 +69,11 @@ h1, h2, h3, h4 { margin: 0; padding: 0; }
 
 .resultContainer { padding: 20px 20px 20px 20px; }
 
-.containerForArticle { width: 70%; margin: 20px auto; background: rgba(51, 51, 51, 0.9); padding: 0px 0 0 10px; color: white; border-radius: 25px; padding: 10px 10px 20px 10px; }
+.containerForArticle { width: 70%; margin: 20px auto; background: rgba(51, 51, 51, 0.9); padding: 0px 0 0 10px; color: white; border-radius: 25px; padding: 10px 10px 20px 10px; box-shadow: 0px 0px 2px #fff; }
 
-.containerForArticle h2 { font-size: 20px; padding: 5px 0 15px 0; text-align: center; color: white; }
+.containerForArticle h2 { font-size: 22px; padding: 5px 0 15px 0; text-align: center; color: #27c9ff; }
 
-.containerForArticle p { color: white; font-size: 16px; }
+.containerForArticle p { color: white; font-size: 18px; }
 
 .theA:hover, .theA:focus, .theA:active { color: white; text-decoration: none; }
 

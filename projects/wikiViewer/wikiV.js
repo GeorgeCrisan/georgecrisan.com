@@ -35,7 +35,7 @@ jQuery(function(){ //start jquery ready
      var titlu = result[1][i];
      var description = result[2][i];
      var link = result[3][i];
-    $('.resultContainer').append('<a class="removeDec" href="'+ link +'"><div class="containerForArticle"><h2> '+ titlu + '</h2><p>'+ description +'</p><a class="theA" href="'+ link +'">'+ link +'</a></div></a>');    
+    $('.resultContainer').append('<a class="removeDec" href="'+ link +'"><div class="containerForArticle"><h2>* '+ titlu + ' *</h2><p>'+ description +'</p><a class="theA" href="'+ link +'">'+ link +'</a></div></a>');    
 
    }
     
