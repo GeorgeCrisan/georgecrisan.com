@@ -57,7 +57,7 @@ channels.forEach(function(chanel){
              getInfo(baseUrlCh + chanel).then(function(data3){
                  var  link = data3.url;
                 console.log(data3);
-                $(".article").append("<section><img src="+ logo + "></img><a href="+ link +"><h2>" + name  + "</h2></a><a href="+ link +"><p>"+ game + " " + dataMmessage + data3.status +"</p></a><span></span></section>");
+                $(".article").append("<section><img src="+ logo + "></img><a href="+ link +" target='_blank'><h2>" + name  + "</h2></a><a href="+ link +" target='_blank'><p>"+ game + " " + dataMmessage + " " + data3.status +"</p></a><span></span></section>");
              });
 
          });
