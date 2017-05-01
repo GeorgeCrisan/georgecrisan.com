@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Black+Ops+One|Bahiana|Pacifico|Indie+Flower|Fira+Sans");
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%; }
+
+* {
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif, Verdana, Geneva, Tahoma;
+  color: black; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0; }
+
+#main-wrapper {
+  height: 100%;
+  width: 100%;
+  background-image: url("img/dsd3.jpg");
+  background-repeat: norepeat;
+  background-attachment: fixed;
+  background-size: cover; }
+
+.calculator {
+  margin: auto;
+  width: 290px;
+  height: 520px;
+  position: relative;
+  top: 150px;
+  background: #f1edde;
+  border: 2px solid #70603e;
+  border-radius: 10px;
+  box-shadow: 1px 0px 10px #70603e;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap; }
+  .calculator #display-console {
+    border: 1px solid #70603e;
+    height: 80px;
+    width: 270px;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background: #637183;
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 10px; }
+    .calculator #display-console .display {
+      color: #fff;
+      font-family: "Black Ops One", serif, sans-serif;
+      font-size: 40px;
+      text-align: right;
+      position: relative;
+      right: 10px;
+      top: 5px; }
+    .calculator #display-console .history {
+      color: orange;
+      font-family: serif, sans-serif ,cursive;
+      font-size: 16px;
+      position: relative;
+      left: 10px;
+      top: 3px; }
+  .calculator #key-pad {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 270px;
+    height: 360px;
+    margin: auto;
+    display: -webkit-grid;
+    display: grid;
+    -ms-display: grid;
+    -webkit-display: grid;
+    -webkit-grid-template-columns: 60px 60px 60px 60px;
+    -ms-grid-template-columns: 60px 60px 60px 60px;
+    -ms-grid-columns: (60px)[4];
+    grid-template-columns: repeat(4, 60px);
+    -ms-grid-rows: 60px 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px;
+    -webkit-grid-template-rows: 60px 60px 60px 60px 60px;
+    -ms-grid-template-rows: 60px 60px 60px 60px 60px;
+    -webkit-grid-column-gap: 10px;
+    grid-column-gap: 10px;
+    -ms-grid-column-gap: 10px;
+    -webkit-grid-row-gap: 10px;
+    grid-row-gap: 10px;
+    -ms-grid-row-gap: 10px; }
+  .calculator h1 {
+    font-size: 12px;
+    text-align: center;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 1px grey;
+    color: #333;
+    padding-bottom: 5px;
+    margin-top: -20px;
+    line-height: 30px; }
+
+button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: 1px solid black;
+  font-family: "Fira Sans", sans-serif ,Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 1px 1px 3px black;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 5px;
+  background: #877;
+  outline: none; }
+  button:visited, button:active, button:hover {
+    text-decoration: none; }
+  button:active {
+    -webkit-transform: translate(0px, 2px);
+    -ms-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  button:hover {
+    opacity: 0.9; }
+
+[key-val='='] {
+  width: 130px; }
+
+[key-val='ac'] {
+  background: #dd3333;
+  color: #fff;
+  font-size: 20px; }
+
+[key-val='back'] {
+  background: #dd3333;
+  color: #fff;
+  font-size: 25px; }
+
+@media (max-width: 740px) {
+  .calculator {
+    top: 30px; } }
