@@ -101,21 +101,9 @@ h1,h2,h3,h4,h5
     height: 360px
     margin: auto
     display: -webkit-grid  
-    display: grid 
-    -ms-display: grid
-    -webkit-display: grid
-    -webkit-grid-template-columns: 60px 60px 60px 60px
-    -ms-grid-template-columns: 60px 60px 60px 60px 
-    grid-template-columns: repeat(4, 60px) 
-    grid-template-rows: 60px 60px 60px 60px 60px
-    -webkit-grid-template-rows: 60px 60px 60px 60px 60px
-    -ms-grid-template-rows: 60px 60px 60px 60px 60px
-    -webkit-grid-column-gap: 10px
-    grid-column-gap: 10px
-    -ms-grid-column-gap: 10px
-    -webkit-grid-row-gap: 10px
-    grid-row-gap: 10px
-    -ms-grid-row-gap: 10px
+    display: block 
+    
+
     
 
   h1 
@@ -148,6 +136,8 @@ button
   border-radius: 5px
   background: #877
   outline: none
+  margin-top: 10px
+  margin-left: 3px
 
   &:visited,&:active,&:hover
     text-decoration: none
@@ -162,7 +152,8 @@ button
 
 
 [key-val='=']
-  width: 130px
+  width: 127px
+  margin-left: 3px
 [key-val='ac']
   background: $redAustin
   color: #fff
