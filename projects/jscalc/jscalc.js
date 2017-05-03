@@ -48,7 +48,7 @@ jQuery(function () {
 
 
     try {
-      result = eval(content).toFixed(3);
+      result = eval(content).toFixed(2);
      // console.log(result);
       $(".display").html(result);
 
