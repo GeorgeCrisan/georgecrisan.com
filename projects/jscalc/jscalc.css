@@ -57,18 +57,18 @@ h1, h2, h3, h4, h5 {
     .calculator #display-console .display {
       color: #fff;
       font-family: "Black Ops One", serif, sans-serif;
-      font-size: 40px;
+      font-size: 22px;
       text-align: right;
       position: relative;
       right: 10px;
-      top: 5px; }
+      top: 15px; }
     .calculator #display-console .history {
       color: orange;
       font-family: serif, sans-serif ,cursive;
       font-size: 16px;
       position: relative;
       left: 10px;
-      top: 3px; }
+      top: 30px; }
   .calculator #key-pad {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
