@@ -118,6 +118,6 @@ jQuery(function () {
       });
   };
 
-
+nodoubletapzoom();
   console.log("all ok");
 }); // end of Jquery
