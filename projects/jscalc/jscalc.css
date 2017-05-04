@@ -70,13 +70,9 @@ h1, h2, h3, h4, h5 {
       left: 10px;
       top: 30px; }
   .calculator #key-pad {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
     width: 270px;
     height: 360px;
     margin: auto;
-    display: -webkit-grid;
     display: block; }
   .calculator h1 {
     font-size: 12px;
@@ -85,7 +81,7 @@ h1, h2, h3, h4, h5 {
     text-shadow: 1px 1px 1px grey;
     color: #333;
     padding-bottom: 5px;
-    margin-top: -20px;
+    margin-top: 20px;
     line-height: 30px; }
 
 button {
@@ -101,7 +97,7 @@ button {
   font-family: "Fira Sans", sans-serif ,Verdana, Geneva, Tahoma, sans-serif;
   text-shadow: 1px 1px 3px black;
   color: #fff;
-  font-size: 25px;
+  font-size: 22px;
   border-radius: 5px;
   background: #877;
   outline: none;
@@ -123,12 +119,12 @@ button {
 [key-val='ac'] {
   background: #dd3333;
   color: #fff;
-  font-size: 20px; }
+  font-size: 22px; }
 
 [key-val='back'] {
   background: #dd3333;
   color: #fff;
-  font-size: 25px; }
+  font-size: 22px; }
 
 @media (max-width: 740px) {
   .calculator {
