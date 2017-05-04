@@ -105,6 +105,12 @@ button {
   margin-left: 3px; }
   button:visited, button:active, button:hover {
     text-decoration: none; }
+  button:active {
+    -webkit-transform: translate(0px, 2px);
+    -ms-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  button:hover {
+    opacity: 0.9; }
 
 [key-val='='] {
   width: 127px;
@@ -124,4 +130,10 @@ button {
   .calculator {
     top: 30px; }
   button:visited, button:active, button:hover {
-    text-decoration: none; } }
+    text-decoration: none; }
+  button:active {
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
+  button:hover {
+    opacity: 1; } }
