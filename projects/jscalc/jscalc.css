@@ -128,4 +128,12 @@ button {
 
 @media (max-width: 740px) {
   .calculator {
-    top: 30px; } }
+    top: 30px; }
+  button:visited, button:active, button:hover {
+    text-decoration: none; }
+  button:active {
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
+  button:hover {
+    opacity: 1; } }
