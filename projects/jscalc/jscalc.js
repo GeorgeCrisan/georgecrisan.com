@@ -33,7 +33,7 @@ $('#main-wrapper').bind('touchstart', function preventZoom(e){
     else 
        $(".history").text(input + value );
 
-     if(input.length >= 20){
+     if(input.length >= 18){
        $(".display").css({"color" : "#faa500", "font-size":" 14px"}).html("Limit Exceeded");
        console.log(input);
       setTimeout(function () {
