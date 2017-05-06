@@ -5,6 +5,7 @@ jQuery(function() {
         var dt = t2 - t1;
         var fingers = e.originalEvent.touches.length;
         $(this).data('lastTouch', t2);
+
         if (!dt || dt > 500 || fingers > 1) {
             return; // not double-tap
         }
