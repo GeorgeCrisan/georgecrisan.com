@@ -137,7 +137,20 @@ body {
       padding: 50px;
       color: #fff;
       font-family: "Open Sans", Courier New, Courier, monospace;
-      font-size: 50px; }
+      font-size: 50px;
+      display: flex;
+      -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap; }
+      .main-wrapper .pclock #display p {
+        font-size: 50px;
+        margin: auto; }
+        .main-wrapper .pclock #display p:first-child {
+          font-size: 20px; }
+          .main-wrapper .pclock #display p:first-child span {
+            color: lime;
+            margin: 0 0 0 10px;
+            font-size: 20px; }
 
 @media (max-width: 500px) {
   button {
