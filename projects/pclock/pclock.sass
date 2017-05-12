@@ -21,9 +21,15 @@ button
   line-height: 10px
   color: black
   text-align: center
-  &:visited,&:active,&:hover
+  &:visited,&:active
     text-decoration: none
     outline: none
+  &:hover
+    text-decoration: none
+    outline: none 
+    background: black
+    color: #fff
+    border: 1px solid #fff  
 
 h1,h2,h3,h4,h5,p 
   font-family: 'Open Sans','Segoe UI', Tahoma, Geneva, Verdana, sans-serif  
@@ -38,6 +44,7 @@ body
   background-image: url("bk3.jpg")
   background-size: 100% 100%
   background-repeat: no-repeat
+
   
 
 .main-wrapper
@@ -50,7 +57,7 @@ body
   height: 500px
   position: relative
   top: 20%
-  background-image: url("bk11.jpg")
+  background-image: url("ab.jpg")
   background-size: 100% 100%
   background-repeat: no-repeat
   border-radius: 50%
@@ -83,41 +90,45 @@ body
           text-align: center
           padding: 20px
           text-shadow: 0px 0px 3px #333
-          color: red
+          color: orange
         display: block 
         margin: auto
         button 
         span 
-          padding: 10px
+          width: 300px
+          padding: 20px
           text-align: center  
           font-size: 22px
-          text-shadow: 0px 0px 5px red
+          text-shadow: 0px 0px 5px orange
           position: relative
-          top: -2px
+          top: -4px
       .set-timer-ct 
         padding: 20px
         h3 
           text-align: center
           padding: 20px
           text-shadow: 0px 0px 3px #333
-          color: red
+          color: orange
         display: block
         margin: auto
         button 
         span 
           font-size: 22px
-          padding: 10px 
+          padding: 20px 
           text-align: center 
           color: #fff
-          text-shadow: 0px 0px 5px red
+          text-shadow: 0px 0px 5px orange
           position: relative
           top: -2px
 
        
     #display 
+      order: 2
       flex: 1 1 auto
       display: flex
       justify-content: space-around
+      position: relative
+      top: -20px
       padding: 50px
       color: #fff
       font-family: "Open Sans", Courier New, Courier, monospace
@@ -130,10 +141,27 @@ body
         &:first-child
           font-size: 20px 
           span 
-            color: lime  
+            color: orange
             margin: 0 0 0 10px
-            font-size: 20px 
+            font-size: 22px 
+      
+    #buttons     
+      order: 1 
+      margin: auto
+      position: relative
+      top: -10px
+            
+      .standard
+        border-radius: 0
+        width: 100px
+        font-size: 20px
+        &:hover 
+          background: black
+          color: #fff
+          border: 1px solid #fff
 
+.te 
+  display: none    
 
 @media (max-width: 500px)
   button 
@@ -160,3 +188,40 @@ body
             font-size: 18px
             position: relative
             top: -4px
+
+      #buttons     
+        order: 1 
+        margin: auto
+        position: relative
+        top: 20px
+              
+        .standard
+          border-radius: 0
+          width: 80px
+          font-size: 14px
+          &:hover 
+            background: black
+            color: #fff
+            border: 1px solid #fff      
+      
+      #display 
+        order: 2
+        flex: 1 1 auto
+        display: flex
+        justify-content: space-around
+        padding: 50px
+        color: #fff
+        font-family: "Open Sans", Courier New, Courier, monospace
+        display: flex
+        flex-flow: column nowrap
+        p
+          font-size: 40px
+          margin: auto
+          position: relative
+          top: 20px
+          &:first-child
+            font-size: 15px 
+            span 
+              color: lime  
+              margin: 0 0 0 10px
+              font-size: 15px 

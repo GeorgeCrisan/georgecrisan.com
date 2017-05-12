@@ -16,26 +16,40 @@ html(lang="en")
     .main-wrapper
       h1 Pomodoro Clock
       .pclock
+        #buttons
+          button.standard#start(data="sesiune") Start
+          button.standard#stop(data="sesiune") Pause
+          button.standard#reset(data="sesiune") Reset
+          button.standard#start-break(data="break") Start
+          button.standard#stop-break(data="break") Pause
+          button.standard#reset-break(data="break") Reset
+
         #timers-container 
           .break-ct
             h3 Break
-            button.break -
-            span 05:00
-            button.break +
+            button.set-break-minus -
+            span.set-break-minutes 
+            button.set-break-plus +
           .set-timer-ct
-            h3 Timer
-            button.set-timer -
-            span 25:00
-            button.set-timer +
+            h3 Session
+            button.set-timer-minus -
+            span.set-timer-minutes 
+            button.set-timer-plus +
+
+        
+
         #display
           p Status: 
             span#status Sesion/Brake
-          p 25:00  
+          p.time-elapsing  
+
+       
+
 
 
     
     script(src='../../js/jquery-3.2.0.min.js', type='text/javascript')
     script(src='../../js/jquery-ui.min.js', type='text/javascript')
-    script(src='../../  js/bootstrap.min.js',type="text/javascript")
+    script(src='../../js/bootstrap.min.js',type="text/javascript")
     script(src='../../js/flexibility.js', type='text/javascript')
     script(src="pclock.js")
