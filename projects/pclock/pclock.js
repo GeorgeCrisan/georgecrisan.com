@@ -66,12 +66,13 @@ function elapseBrake(){
       clearInterval(countdown);
       countdown = setInterval(function(){
                  arangeDisplay(breakTimeSeconds);
-                 breakTimeSeconds--;
+                 
               if(breakTimeSeconds == 0){
                 clearInterval(countdown);
                 timerTimeSeconds = timerTime * 60;
+                elapseTime();
               }
-
+              breakTimeSeconds--;
       },1000);
 }
 
