@@ -113,8 +113,8 @@ $(function() {
             --timerTime;
             if (timerTime == breakTime)
                 breakTime++;
-            if (timerTime < 0)
-                timerTime = 0;
+            if (timerTime < 1)
+                timerTime = 1;
             timerTimeSeconds = timerTime * 60;
             setTimer.html(timerTime);
 
@@ -122,8 +122,8 @@ $(function() {
             --breakTime;
             if (timerTime == breakTime)
                 timerTime++;
-            if (breakTime < 0)
-                breakTime = 0;
+            if (breakTime < 1)
+                breakTime = 1;
             breakTimeSeconds = breakTime * 60;
 
             setBreak.html(breakTime);
@@ -169,6 +169,21 @@ $(function() {
 
     stop.click(function() {
         clearInterval(decrement);
+    });
+
+    reset.click(function() {
+        clearInterval(decrement);
+        status.html("Pending").css('color', '#fff');
+        $('.main-wrapper').css("border", "solid 5px #fff");
+        start.attr('data', 'sesiune');
+        stop.attr('data', 'sesiune');
+        timerTime = 25;
+        breakTime = 5;
+        timerTimeSeconds = timerTime * 60;
+        breakTimeSeconds = breakTime * 60;
+        display.html(timerTime + ':00');
+        setBreak.html(breakTime);
+        setTimer.html(timerTime);
 
 
     });

@@ -21,7 +21,9 @@ button {
   font-size: 30px;
   line-height: 10px;
   color: black;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer;
+  z-index: 44; }
   button:visited, button:active {
     text-decoration: none;
     outline: none; }
