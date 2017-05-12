@@ -152,12 +152,19 @@ $(function() {
     });
 
     start.click(function() {
-        clearInterval(decrement);
-        if (start.attr('data') == 'break')
-            elapseBrake();
 
-        if (start.attr('data') == 'sesiune')
+        if (start.attr('data') == 'break') {
+            clearInterval(decrement);
+            elapseBrake();
+        }
+
+
+        if (start.attr('data') == 'sesiune') {
+            clearInterval(decrement);
             elapseTime();
+
+        }
+
     });
 
     stop.click(function() {
