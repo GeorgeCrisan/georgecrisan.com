@@ -34,6 +34,9 @@ button {
     color: #fff;
     border: 1px solid #fff; }
 
+.ui-effects-wrapper {
+  display: none; }
+
 h1, h2, h3, h4, h5, p {
   font-family: 'Open Sans','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -156,7 +159,8 @@ body {
       margin: auto;
       -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
-      flex-flow: column nowrap; }
+      flex-flow: column nowrap;
+      z-index: 3; }
       .main-wrapper .pclock #display p {
         font-size: 50px;
         margin: auto;
@@ -176,7 +180,8 @@ body {
       order: 1;
       margin: auto;
       position: relative;
-      top: -10px; }
+      top: -10px;
+      z-index: 435; }
       .main-wrapper .pclock #buttons .standard {
         border-radius: 0;
         width: 100px;
@@ -185,9 +190,6 @@ body {
           background: black;
           color: #fff;
           border: 1px solid #fff; }
-
-.te {
-  display: none; }
 
 @media (max-width: 500px) {
   button {
@@ -217,7 +219,9 @@ body {
       order: 1;
       margin: auto;
       position: relative;
-      top: 20px; }
+      top: 20px;
+      z-index: 555;
+      cursor: pointer; }
       .main-wrapper .pclock #buttons .standard {
         border-radius: 0;
         width: 80px;
@@ -243,6 +247,7 @@ body {
       color: #fff;
       font-family: "Open Sans", Courier New, Courier, monospace;
       display: flex;
+      z-index: 4;
       -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
       flex-flow: column nowrap; }

@@ -2,8 +2,8 @@ $(function() {
     "use strict";
     //declare standard parameters
     var decrement,
-        timerTime = 25,
-        breakTime = 5,
+        timerTime = 5,
+        breakTime = 25,
         timerTimeSeconds = timerTime * 60,
         breakTimeSeconds = breakTime * 60;
 
@@ -45,11 +45,9 @@ $(function() {
         start.attr('data', 'sesiune');
         stop.attr('data', 'sesiune');
         clearInterval(decrement);
-        timerTimeSeconds--;
+        //timerTimeSeconds--;
         decrement = setInterval(function() {
             arangeDisplay(timerTimeSeconds);
-
-
             if (timerTimeSeconds == 0) {
                 clearInterval(decrement);
                 breakTimeSeconds = breakTime * 60;
@@ -68,7 +66,7 @@ $(function() {
         $('.main-wrapper').css("border", "solid 5px orange");
         start.attr('data', 'break');
         stop.attr('data', 'break');
-        breakTimeSeconds--;
+        //breakTimeSeconds--;
         clearInterval(decrement);
         decrement = setInterval(function() {
             arangeDisplay(breakTimeSeconds);
@@ -84,82 +82,58 @@ $(function() {
 
 
 
-    function addMins(element, second) {
-        if (second === timerTimeSeconds && element == timerTime) {
+    function addMinsT() {
+        timerTime++;
+        timerTimeSeconds = timerTime * 60;
+        setTimer.html(timerTime);
+    } // end of addMinsT
 
-            timerTime++;
-            if (timerTime === breakTime)
-                breakTime--;
-            // console.log(timerTimeSeconds);
-            timerTimeSeconds = timerTime * 60;
-            // console.log(timerTimeSeconds);
+    function addMinsB() {
+        breakTime++;
+        breakTimeSeconds = breakTime * 60;
+        setBreak.html(breakTime);
+    } // end of addMinsB
 
-            setTimer.html(timerTime);
-        } else if (second === breakTimeSeconds && element == breakTime) {
 
-            breakTime++;
-            if (breakTime === timerTime)
-                timerTime--;
-            breakTimeSeconds = breakTime * 60;
 
-            setBreak.html(breakTime);;
+    function substractMinsT() {
+        timerTime--;
+        if (timerTime < 1)
+            timerTime = 1;
+        timerTimeSeconds = timerTime * 60;
+        setTimer.html(timerTime);
+    } // end of subMinsT
 
-        }
-    } // end of addMins
-
-    function substractMins(element, second) {
-
-        if (element == timerTime && second == timerTimeSeconds) {
-            --timerTime;
-            if (timerTime == breakTime)
-                breakTime++;
-            if (timerTime < 1)
-                timerTime = 1;
-            timerTimeSeconds = timerTime * 60;
-            setTimer.html(timerTime);
-
-        } else if (element == breakTime && second == breakTimeSeconds) {
-            --breakTime;
-            if (timerTime == breakTime)
-                timerTime++;
-            if (breakTime < 1)
-                breakTime = 1;
-            breakTimeSeconds = breakTime * 60;
-
-            setBreak.html(breakTime);
-        }
-
-    } // end of subMins
+    function substractMinsB() {
+        breakTime--;
+        if (breakTime < 1)
+            breakTime = 1;
+        breakTimeSeconds = breakTime * 60;
+        setBreak.html(breakTime);
+    } // end of subMinsT
 
 
 
     //declare eventListeners !!!!!!!!!!1
-    setTimerPlus.on('click', function() {
-        addMins(timerTime, timerTimeSeconds);
-    }); // bind click event to add minutes to sesion 
+    setTimerPlus.on('click', addMinsT); // bind click event to add minutes to sesion 
 
-    setBreakPlus.on('click', function() {
-        addMins(breakTime, breakTimeSeconds);
-        //console.log("odata"); 
-    }); //bind click event to add minutes to break
+    setBreakPlus.on('click', addMinsB); //bind click event to add minutes to break
 
-    setTimerMinus.on("click", function() {
-        substractMins(timerTime, timerTimeSeconds);
-    });
+    setTimerMinus.on("click", substractMinsT);
 
-    setBreakMinus.click(function() {
-        substractMins(breakTime, breakTimeSeconds);
-    });
+    setBreakMinus.click(substractMinsB);
 
     start.click(function() {
 
         if (start.attr('data') == 'break') {
+            $('.main-wrapper').effect("shake");
             clearInterval(decrement);
             elapseBrake();
         }
 
 
         if (start.attr('data') == 'sesiune') {
+            $('.main-wrapper').effect("shake");
             clearInterval(decrement);
             elapseTime();
 
