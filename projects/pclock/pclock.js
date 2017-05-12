@@ -2,8 +2,8 @@ $(function() {
     "use strict";
     //declare standard parameters
     var decrement,
-        timerTime = 5,
-        breakTime = 25,
+        timerTime = 25,
+        breakTime = 5,
         timerTimeSeconds = timerTime * 60,
         breakTimeSeconds = breakTime * 60;
 
