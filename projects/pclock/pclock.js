@@ -133,7 +133,8 @@ $(function() {
 
 
         if (start.attr('data') == 'sesiune') {
-            $('.main-wrapper').toggleClass('Blink');
+            if ($('.main-wrapper').hasClass('Blink') == false)
+                $('.main-wrapper').toggleClass('Blink');
             clearInterval(decrement);
             elapseTime();
 
@@ -144,11 +145,13 @@ $(function() {
     stop.click(function() {
 
         clearInterval(decrement);
-
-        $('.main-wrapper').toggleClass('Blink');
+        if ($('.main-wrapper').hasClass('Blink'))
+            $('.main-wrapper').toggleClass('Blink');
     });
 
     reset.click(function() {
+        if ($('.main-wrapper').hasClass('Blink'))
+            $('.main-wrapper').toggleClass('Blink');
         clearInterval(decrement);
         status.html("Pending").css('color', '#fff');
         $('.main-wrapper').css("border", "solid 5px #fff");
