@@ -126,14 +126,14 @@ $(function() {
     start.click(function() {
 
         if (start.attr('data') == 'break') {
-            $('.main-wrapper').effect("shake");
+            $('.main-wrapper').toggleClass('Blink');
             clearInterval(decrement);
             elapseBrake();
         }
 
 
         if (start.attr('data') == 'sesiune') {
-            $('.main-wrapper').effect("shake");
+            $('.main-wrapper').toggleClass('Blink');
             clearInterval(decrement);
             elapseTime();
 
@@ -142,7 +142,10 @@ $(function() {
     });
 
     stop.click(function() {
+
         clearInterval(decrement);
+
+        $('.main-wrapper').toggleClass('Blink');
     });
 
     reset.click(function() {

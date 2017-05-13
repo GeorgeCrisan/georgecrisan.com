@@ -1,10 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Inconsolata|Bahiana|Pacifico|Indie+Flower|Fira+Sans")
+=Blink($time,$color)
+  animation: Blink $time ease infinite
+
+  @keyframes Blink
+    0%
+      border: 5px solid fff
+    50% 
+      border: 5px solid $color 
+    100%
+      border: 5px solid #fff
+
 *
   box-sizing: border-box
   text-decoration: none
   padding: 0
   margin: 0 
   outline: none
+ 
+.Blink
+  @include Blink(1s,grey)
+
 
 button 
   -webkit-appearance: none
@@ -31,11 +46,7 @@ button
     outline: none 
     background: black
     color: #fff
-    border: 1px solid #fff 
-
-.ui-effects-wrapper 
-  display: none
-    
+    border: 1px solid #fff  
     
 
 h1,h2,h3,h4,h5,p 
@@ -155,6 +166,7 @@ body
             color: orange
             margin: 0 0 0 10px
             font-size: 22px 
+     
       
     #buttons     
       order: 1 

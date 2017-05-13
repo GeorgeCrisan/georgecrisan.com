@@ -6,6 +6,26 @@
   margin: 0;
   outline: none; }
 
+.Blink {
+  -webkit-animation: Blink 1s ease infinite;
+  animation: Blink 1s ease infinite; }
+
+@-webkit-keyframes Blink {
+  0% {
+    border: 5px solid fff; }
+  50% {
+    border: 5px solid grey; }
+  100% {
+    border: 5px solid #fff; } }
+
+@keyframes Blink {
+  0% {
+    border: 5px solid fff; }
+  50% {
+    border: 5px solid grey; }
+  100% {
+    border: 5px solid #fff; } }
+
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -33,9 +53,6 @@ button {
     background: black;
     color: #fff;
     border: 1px solid #fff; }
-
-.ui-effects-wrapper {
-  display: none; }
 
 h1, h2, h3, h4, h5, p {
   font-family: 'Open Sans','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
