@@ -126,7 +126,8 @@ $(function() {
     start.click(function() {
 
         if (start.attr('data') == 'break') {
-            $('.main-wrapper').toggleClass('Blink');
+            if ($('.main-wrapper').hasClass('Blink') == false)
+                $('.main-wrapper').toggleClass('Blink');
             clearInterval(decrement);
             elapseBrake();
         }
@@ -140,7 +141,7 @@ $(function() {
 
         }
 
-    });
+    }); //end of start
 
     stop.click(function() {
 
