@@ -50,6 +50,11 @@ body {
     -webkit-transform: scale(1);
     transform: scale(1); } }
 
+.adsforhere {
+  position: relative;
+  top: -200px;
+  z-index: 5346; }
+
 .container-welcome {
   width: 320px;
   margin: auto;
