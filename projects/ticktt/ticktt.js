@@ -250,7 +250,7 @@ jQuery(function() {
            });
        }
        if(computerCombos.length >= 5 && mark === 0 || playerCombos.length >= 5 && mark === 0){
-           $(".none").html("Kyrill This Game is a Draw. Play again !");
+           $(".none").html(" This Game is a Draw. Play again !");
            resetAll();
     
     console.log("is a Draw");
@@ -266,7 +266,7 @@ jQuery(function() {
            });
    } 
     if(computerCombos.length >= 5 && mark === 0 || playerCombos.length >= 5 && mark === 0 ){
-           $(".none").html("Kyrill This Game is a Draw. Play again !");
+           $(".none").html(" This Game is a Draw. Play again !");
            resetAll();
     
     console.log("is a Draw");
@@ -299,9 +299,9 @@ function resetAll(){
       setTimeout(function(){
           if(mark === 1){
               if(whoWon === "X" && playerSymbol === "X")
-           $(".none").html("Kyrill " + " Won This Game. Play Again!");
+           $(".none").html("You " + " Won This Game. Play Again!");
            else if(whoWon === "O" && playerSymbol === "O")
-            $(".none").html("Kyrill" + " Won This Game. Play Again!");
+            $(".none").html("You" + " Won This Game. Play Again!");
             else
             $(".none").html( "Computer" + " Won This Game. Play Again!");
         }
