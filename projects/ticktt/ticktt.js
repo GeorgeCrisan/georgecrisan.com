@@ -11,6 +11,10 @@ jQuery(function() {
   var computerSymbol = "";
   var boxes = $('.boxes span');
   var arrayOfBoxes = [];
+  for(var k of boxes)
+     arrayOfBoxes.push(k);
+
+ // console.log(arrayOfBoxes);   
   var markArray = [0,1,2,3,4,5,6,7,8];
   var winSitutations = [
     [0, 1, 2],
@@ -25,9 +29,11 @@ jQuery(function() {
   var playerCombos = [];
   var computerCombos = [];
   var whoWon = "";
+  var mark = 0;
 
 
-  $(".el0").click(function(){
+
+ $(".el0").click(function(event){
       if(typeof markArray[0] == "number"){
            playerCombos.push(markArray[0]);
            markArray[0] = playerSymbol;
@@ -39,7 +45,7 @@ jQuery(function() {
       }
   });
 
-  $(".el1").click(function(){
+  $(".el1").click(function(event){
       if(typeof markArray[1] == "number"){
           playerCombos.push(markArray[1]);
            markArray[1] = playerSymbol;
@@ -132,38 +138,144 @@ jQuery(function() {
            markArray[8] = playerSymbol;
       $(".el8").html(playerSymbol);  
       console.log(playerCombos);
+      checkForPlayer();
       computerTurn();
-      checkForComputer();
+      
       }
   });
 
 
   function compareArrays(arr1, arr2){
-    return  arr1.every(function(v){
-          return arr2.indexOf(v) > -1;
-      });
+    arr1.sort(function(a,b){
+        return a - b;
+    });
+    arr2.sort(function(a,b){
+        return a - b;
+    });
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[1] && arr1[2] === arr2[2]){
+       console.log("we have a winner");
+     mark = 1;
+     resetAll();
+     return;
+    }
+    
+    if(arr1[0] === arr2[1] && arr1[1] === arr2[2] && arr1[2] == arr2[3] ){
+       console.log("we have a winner");
+     mark = 1;
+     resetAll();
+     return;
+    }
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[2] && arr1[2] == arr2[3] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+    if(arr1[0] === arr2[2] && arr1[1] === arr2[3] && arr1[2] == arr2[4] ){
+       console.log("we have a winner");
+     mark = 1;
+     resetAll();
+     return;
+    }
+
+    if(arr1[0] === arr2[1] && arr1[1] === arr2[2] && arr1[2] == arr2[4] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[2] && arr1[2] == arr2[4] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[2] && arr1[2] == arr2[3] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[1] && arr1[2] == arr2[3] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+     if(arr1[0] === arr2[0] && arr1[1] === arr2[1] && arr1[2] == arr2[3] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[2] && arr1[2] == arr2[4] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[3] && arr1[2] == arr2[4] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
+    if(arr1[0] === arr2[0] && arr1[1] === arr2[1] && arr1[2] == arr2[4] ){
+       console.log("we have a winner");
+      mark = 1;
+      resetAll();
+      return;
+    }
+
 
 
   }
 
   function checkForPlayer(){
      console.log("checked for player");
+     whoWon = playerSymbol;
        if(playerCombos.length > 2){
            winSitutations.map(function(element){
-          console.log (compareArrays(element,playerCombos));
+          return compareArrays(element,playerCombos);
            });
        }
-
-
+       if(computerCombos.length >= 5 && mark === 0 || playerCombos.length >= 5 && mark === 0){
+           $(".none").html("Kyrill This Game is a Draw. Play again !");
+           resetAll();
+    
+    console.log("is a Draw");
+}
   }
 
  function checkForComputer(){
-     //console.log("checked for Computer");
- } 
-
+     whoWon = computerSymbol;
+     console.log("checked for Computer");
+       if(computerCombos.length > 2){
+           winSitutations.map(function(element){
+          return compareArrays(element,computerCombos);
+           });
+   } 
+    if(computerCombos.length >= 5 && mark === 0 || playerCombos.length >= 5 && mark === 0 ){
+           $(".none").html("Kyrill This Game is a Draw. Play again !");
+           resetAll();
+    
+    console.log("is a Draw");
+}
+ }
 
 
 function computerTurn(){
+    if(mark == 0 ){
     if(computerCombos.length > 3)
        return;
     setTimeout(function(){
@@ -178,11 +290,45 @@ function computerTurn(){
     console.log(computerCombos);
     checkForComputer();
     },800);
-    
+}  else 
+return;
 }
 
 
-
+function resetAll(){
+      setTimeout(function(){
+          if(mark === 1){
+              if(whoWon === "X" && playerSymbol === "X")
+           $(".none").html("Kyrill " + " Won This Game. Play Again!");
+           else if(whoWon === "O" && playerSymbol === "O")
+            $(".none").html("Kyrill" + " Won This Game. Play Again!");
+            else
+            $(".none").html( "Computer" + " Won This Game. Play Again!");
+        }
+      },1000);  
+    setTimeout(function(){
+        mark = 0;
+    arrayOfBoxes.map(function(el){
+        el = $(el);
+      return el.html('<i class="fa" aria-hidden="true"></i>');
+    });
+    computerCombos = [];
+    playerCombos = [];
+    playerSymbol = "";
+    computerSymbol = "";
+    whoWon = "";
+    markArray = [0,1,2,3,4,5,6,7,8];
+    theContWel.css("display","block");
+    theContArea.css("display","none");
+     $('.boxes').css("display","none");
+     $('body').css("transition","all 2s ease");
+     $('body').css("background","teal");
+     $(".none").css("display","none");
+     $(".none").html("Kyrill`s Tic Tac Toe ");
+},7000);
+    
+    
+} //end of resetAll
 
 
 
@@ -232,7 +378,7 @@ function computerTurn(){
       //console.log(computerSymbol);
       
  });
- 
+
 
   function drawboard(){
     var canvas = document.getElementById('myCanvas');

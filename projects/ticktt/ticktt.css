@@ -57,7 +57,8 @@ body {
   position: relative;
   display: block;
   top: 150px;
-  border-radius: 30px; }
+  border-radius: 30px;
+  box-shadow: 0px 1px 10px black inset; }
   .container-welcome h1 {
     font-family: 'Baloo', cursive;
     text-align: center;
@@ -101,7 +102,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 30px;
-  display: none; }
+  display: none;
+  box-shadow: 3px 3px 7px black; }
 
 #myCanvas {
   width: 420px;
@@ -133,6 +135,7 @@ body {
     text-align: center;
     padding: 40px;
     color: #fff;
+    text-shadow: 4px 4px 3px black;
     width: 33%;
     height: 33%;
     font-size: 45px; }
