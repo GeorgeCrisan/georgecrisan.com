@@ -324,6 +324,7 @@ function resetAll(){
      $('body').css("transition","all 2s ease");
      $('body').css("background","teal");
      $(".none").css("display","none");
+     $('.adsforhere').css("display","none");
      $(".none").html("Kyrill`s Tic Tac Toe ");
 },7000);
     
@@ -359,6 +360,7 @@ function resetAll(){
      $('body').css("transition","all 2s ease");
      setTimeout(function(){ theContArea.css("display","block");
                             $('.boxes').css("display","block");},1000);
+                            $('.adsforhere').css("display","block");
      $('body').css("background","#433159");
      $(".none").css("display","block");
      //console.log(playerSymbol + " player e x");
@@ -372,6 +374,7 @@ function resetAll(){
      $('body').css("transition","all 2s ease");
      setTimeout(function(){ theContArea.css("display","block");
                              $('.boxes').css("display","block");  },1000);
+                             $('.adsforhere').css("display","block");
      $('body').css("background","#433159");
       $(".none").css("display","block");
       //console.log(playerSymbol + " player e o");
