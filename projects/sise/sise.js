@@ -26,7 +26,6 @@ $("[name='my-checkbox']").bootstrapSwitch("state",false);
   var compChoices = [];
   
 
-
         function audioColors(){
                   var green  = 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3';
                   var  red = 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3';
@@ -35,6 +34,13 @@ $("[name='my-checkbox']").bootstrapSwitch("state",false);
                   var  fail = 'http://k003.kiwi6.com/hotlink/clrtgq79wz/failsimon.mp3' ;                  
                    }; //end of 
 
+  function randomGen(){
+          if(level === 1)
+            compChoices = [];
+
+       var randNum = Math.floor(Math.random() * 4) +1;
+       compChoices.push(randNum);     
+   }; //end of randomGen
         
 
    /*    function addOpacityAndS(e){
@@ -66,13 +72,7 @@ $("[name='my-checkbox']").bootstrapSwitch("state",false);
 
    }; // end of play Audio
 
-   function randomGen(){
-          if(level === 1)
-            compChoices = [];
-
-       var randNum = Math.floor(Math.random() * 4) +1;
-       compChoices.push(randNum);     
-   }; //end of randomGen
+ 
 
 
 
@@ -81,26 +81,21 @@ var interval;
   function compPlay(){
 
       clearInterval(interval);
-      this.randomGen();
+       randomGen();
 
       document.getElementById("red").style.pointerEvents = "none";
       document.getElementById("yellow").style.pointerEvents = "none";
       document.getElementById("blue").style.pointerEvents = "none";
       document.getElementById("green").style.pointerEvents = "none";
 
-    this.indexT = 0;  
 
-    var self = this, i = 0, randomID;
+    var i = 0;
       
       interval = setInterval(function(){
 
-          randomID = self.numColors[self.compChoices[i]];
-           
-           self.addOpacityAndS(randomID);
-
            i++;
 
-         if(i === self.compChoices.length){
+         if(i === compChoices.length){
              document.getElementById("yellow").style.pointerEvents = "auto";
              document.getElementById("yellow").style.pointerEvents = "auto";
              document.getElementById("yellow").style.pointerEvents = "auto";
@@ -126,19 +121,6 @@ var interval;
        if(level <= 20)      
         return tFreq[3];
   };  //end of timeFreq
-
-   function checkPlay(en){
-       var diff = true;
-       if(this.numColors[en.target.id] !== this.compChoices[this.indexT]){
-           diff = false;
-           return diff;
-       }
-       return diff;
-   }; // end of checkPlay
-  
-
-
-
 
 
 
