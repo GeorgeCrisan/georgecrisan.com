@@ -82,7 +82,7 @@ body {
   height: 230px;
   background: red;
   border: 7px solid #17202A;
-  box-shadow: 0px 0px 15px black inset; }
+  box-shadow: 0px 0px 15px black offset; }
 
 .bt1 {
   background: #196F3D;
@@ -174,8 +174,8 @@ body {
 
 .switcho {
   position: relative;
-  left: 60px;
-  top: 5px; }
+  left: 50px;
+  top: 0px; }
 
 .opacity1 {
   -webkit-filter: brightness(120%);
