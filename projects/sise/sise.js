@@ -1,6 +1,56 @@
 jQuery(function() {
     "use strict";
-    $.fn.bootstrapSwitch.defaults.size = 'small';
+
+
+    /**prevent double zoom and double click selecting in browser and mobile devices  */
+    $('.wrapper').bind('touchstart', function preventZoom(e) {
+        var t2 = e.timeStamp;
+        var t1 = $(this).data('lastTouch') || t2;
+        var dt = t2 - t1;
+        var fingers = e.originalEvent.touches.length;
+        $(this).data('lastTouch', t2);
+        // ceva de vazut
+
+        if (!dt || dt > 500 || fingers > 1) {
+            return; // not double-tap
+        }
+        e.preventDefault(); // double tap - prevent the zoom
+        // also synthesize click events we just swallowed up
+        $(e.target).trigger('click');
+
+    });
+    /**finish of thew doble tap prevent function*/
+
+    /**define Arry.prototype.equal method in the prototype of the array */
+    if (Array.prototype.equals)
+        console.warn("I will overdie any equal methods ");
+
+    Array.prototype.equals = function(array) {
+        if (!array)
+            return false;
+
+        if (this.length != array.length)
+            return false;
+
+
+        for (var i = 0, l = this.length; i < l; i++) {
+            if (this[i] instanceof Array && array[i] instanceof Array) {
+                if (!this[i].equals(array[i]))
+                    return false;
+            } else if (this[i] != array[i]) {
+                return false;
+            }
+
+        }
+        return true;
+    };
+
+    Object.defineProperty(Array.prototype, 'equals', { enumerable: false });
+    /**end of compare method  */
+
+
+    /*****bootstrap switch button settings size and colors *********/
+    $.fn.bootstrapSwitch.defaults.size = 'mini';
     $.fn.bootstrapSwitch.defaults.onColor = 'success';
     $.fn.bootstrapSwitch.defaults.offColor = 'danger';
     //function for change
@@ -21,27 +71,28 @@ jQuery(function() {
     var strict = false;
     var count = 0;
     var mark = 0;
+    var wonG = false;
+    var theChoice = undefined;
     var historyPlayer = [];
     var historyUi = [];
-    var wrongColorChoice = 0;
-    var level = 5;
-    var intervalUi;
+    var level = 1;
+    var wrg = false;
     var randomness;
-    var intervalIterator = 0;
+
 
 
 
     function audioChoice(para) {
-        if (para == "green")
+        if (para == 0)
             return 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3';
 
-        else if (para == "red")
+        else if (para == 1)
             return 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3';
 
-        else if (para === "blue")
+        else if (para === 2)
             return 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3';
 
-        else if (para === "yello")
+        else if (para === 3)
             return 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3';
 
         else if (para == "fail")
@@ -63,33 +114,6 @@ jQuery(function() {
     }; //end of randomGen
 
 
-    /*    function addOpacityAndS(e){
-             var colorOfElement =typeof e=="string"?e:e.target.id;
-             var soundByColor;
-
-             if(this.wrongColorChoice === 0)
-               soundByColor = colorOfElement;
-             else 
-               soundByColor = "fail";  
-
-           var playSound  = this.audioColors[soundByColor];
-           this.playAudio(playSound);
-
-          setTimeout(function(){
-            document.getElementById(colorOfElement).style.filter = "brightness(120%)";
-           },0);  
-
-          setTimeout(function(){
-            document.getElementById(colorOfElement).style.filter = "brightness(100%)";
-           },500);  
-
-         } //end of addOpacityAndS */
-
-
-    // end of play Audio
-
-
-
 
 
 
@@ -98,40 +122,76 @@ jQuery(function() {
 
 
         function comPart() {
+            $('#count').html(level);
+            document.getElementById("red").style.pointerEvents = "none";
+            document.getElementById("yellow").style.pointerEvents = "none";
+            document.getElementById("blue").style.pointerEvents = "none";
+            document.getElementById("green").style.pointerEvents = "none";
 
-            intervalIterator = setInterval(function() {
-                console.log('coming from iterator!');
+            var randomness = randomGen();
+            historyUi.push(randomness);
+            if (wrg === true) {
+                wrg = false;
+                historyUi.pop();
+                alert('a doua');
+            }
 
-                if (historyUi.length >= level) {
-                    clearInterval(intervalIterator);
-                    document.getElementById("red").style.pointerEvents = "auto";
-                    document.getElementById("yellow").style.pointerEvents = "auto";
-                    document.getElementById("blue").style.pointerEvents = "auto";
-                    document.getElementById("green").style.pointerEvents = "auto";
-                    return playerpart();
-                }
+            if (level === 5) {
+
+                alert("You Won... !!! Yohoooo 11");
+
+                $('#count').html("1 <p>count</p>");
+                clearTimeout();
+                historyUi = [];
+                historyPlayer = [];
+                level = 1;
+                wonG = true;
+                return;
+            }
+
+            if (historyUi.length > 0) {
+                historyUi.forEach(function(element, index) {
+
+                    document.getElementById("red").style.pointerEvents = "none";
+                    document.getElementById("yellow").style.pointerEvents = "none";
+                    document.getElementById("blue").style.pointerEvents = "none";
+                    document.getElementById("green").style.pointerEvents = "none";
+
+                    setTimeout(function() {
+                        if (wonG === true) {
+                            clearTimeout();
+                            wonG = false;
+                            historyUi = [];
+                            historyPlayer = [];
+                            return;
+
+                        }
 
 
-                document.getElementById("red").style.pointerEvents = "none";
-                document.getElementById("yellow").style.pointerEvents = "none";
-                document.getElementById("blue").style.pointerEvents = "none";
-                document.getElementById("green").style.pointerEvents = "none";
+                        setTimeout(function() {
+                            buttons[element].style.filter = "brightness(130%)";
+                            playAudio(audioChoice(element));
+                        }, 0);
 
-                var randomness = randomGen();
-                historyUi.push(randomness);
+                        setTimeout(function() {
+                            buttons[element].style.filter = "brightness(100%)";
+                            console.log(historyUi + ' *******this is history of the computer');
+
+                            if (historyUi.length >= level) {
+
+                                playerpart();
+                            }
+                        }, 300);
 
 
-                setTimeout(function() {
+                    }, timeFreq(level) * (index + 1));
 
-                    buttons[randomness].style.filter = "brightness(130%)";
-                }, 0);
+                });
+            }
 
-                setTimeout(function() {
-                    buttons[randomness].style.filter = "brightness(100%)";
-                }, 300);
 
-                console.log('ended');
-            }, timeFreq(level));
+
+
 
 
         } // end of comp part
@@ -142,10 +202,77 @@ jQuery(function() {
         comPart();
 
         function playerpart() {
-            $('.bt').on('click', function(e) {
-                console.log(e);
+
+            //console.log(historyPlayer + "from playerpart at the begging");
+            document.getElementById("red").style.pointerEvents = "auto";
+            document.getElementById("yellow").style.pointerEvents = "auto";
+            document.getElementById("blue").style.pointerEvents = "auto";
+            document.getElementById("green").style.pointerEvents = "auto";
+
+            function whichone(elmId) {
+
+                if (elmId === 'green')
+                    return 0;
+                else if (elmId === 'red')
+                    return 1;
+                else if (elmId === 'yellow')
+                    return 2;
+                else if (elmId === 'blue')
+                    return 3;
+            } // end of which one
+
+            $('.bt').unbind('mousedown');
+            $('.bt').on('mousedown', function(e) {
+                theChoice = whichone(e.target.id);
+                e.stopPropagation();
+                console.log(historyPlayer + " after click event dar vine simplu");
+                historyPlayer.push(theChoice);
+                playAudio(audioChoice(theChoice));
+                if (historyPlayer.equals(historyUi)) {
+                    historyPlayer = [];
+                    $('#count').html(level);
+                    level++;
+                    setTimeout(comPart, 1100);
+                }
+
+                setTimeout(function() {
+
+                    buttons[theChoice].style.filter = "brightness(130%)";
+                    playAudio(audioChoice(theChoice));
+                }, 0);
+
+                setTimeout(function() {
+                    buttons[theChoice].style.filter = "brightness(100%)";
+                    if (historyUi.length === historyPlayer.length && historyUi.equals(historyPlayer)) {
+                        historyPlayer = [];
+                        $('#count').html(level);
+                        level++;
+                        setTimeout(comPart, 1100);
+                    } else if (historyUi.length === historyPlayer.length && !historyPlayer.equals(historyUi)) {
+
+                        playAudio(audioChoice('fail'));
+                        //level = historyUi.length;
+                        historyPlayer = [];
+                        alert('wrong combination');
+                        //$('#count').html(level);
+                        wrg = true;
+
+                        if (strict == true) {
+                            $('#count').html("1 <p> count </p>");
+                            alert('Wrong sequence. Press start again !');
+                            clearTimeout();
+                            historyPlayer = [];
+                            historyUi = [];
+                            level = 1;
+                        }
+                    }
+
+                }, 300);
+
             });
-        }
+
+        } //end of player part
+
 
     }; // end of running
 
@@ -154,20 +281,16 @@ jQuery(function() {
 
 
     function timeFreq(level) {
-        var tFreq = [1900, 1700, 1500, 1300];
+        var tFreq = [800, 500, 400];
 
-        if (level < 4)
-            return tFreq[0];
         if (level < 8)
+            return tFreq[0];
+        if (level < 14)
             return tFreq[1];
-        if (level < 12)
+        if (level < 20)
             return tFreq[2];
-        if (level <= 20)
-            return tFreq[3];
+
     }; //end of timeFreq
-
-
-
 
 
     switcho.on('switchChange.bootstrapSwitch', function() {
@@ -175,9 +298,21 @@ jQuery(function() {
 
         if (switcho.bootstrapSwitch("state") === true) {
             //end of startClk
+            startBt.unbind('click');
             startBt.on('click', running);
+            $('#count').css('background-color', '#6C3483');
+
+
 
         } else if (switcho.bootstrapSwitch("state") === false) {
+
+            startBt.on('click', function() { return; });
+            strictBt.unbind('click');
+            historyUi = [];
+            historyPlayer = [];
+            $('#count').css('background-color', '#fff');
+            $('#count').html(" - <p> count </p>");
+            level = 1;
 
         }
 
@@ -185,7 +320,14 @@ jQuery(function() {
     });
 
 
-
+    strictBt.on('click', function() {
+        strictBulb.toggleClass('diferit');
+        if (strictBulb.hasClass('diferit'))
+            strict = true;
+        else
+            strict = false;
+        console.log(strict);
+    });
 
 
 

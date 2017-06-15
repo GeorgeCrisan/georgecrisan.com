@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo");
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #fff; }
 
@@ -57,6 +58,7 @@ body {
   display: block; }
 
 .wrapper-bt {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -69,9 +71,12 @@ body {
   height: 460px;
   position: relative;
   top: 150px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -82,7 +87,9 @@ body {
   height: 230px;
   background: red;
   border: 7px solid #17202A;
-  box-shadow: 0px 0px 15px black offset; }
+  -webkit-box-shadow: 0px 0px 15px black offset;
+  box-shadow: 0px 0px 15px black offset;
+  cursor: pointer; }
 
 .bt1 {
   background: #196F3D;
@@ -110,6 +117,7 @@ body {
   background: #1C2833;
   z-index: 55;
   border: 7px solid #17202A;
+  -webkit-box-shadow: 0px 0px 15px black inset;
   box-shadow: 0px 0px 15px black inset; }
   .center h1 {
     font-family: "Baloo", sans-serif, Arial, Helvetica, sans-serif;
@@ -119,7 +127,7 @@ body {
   .center .count {
     width: 50px;
     height: 30px;
-    background: #6C3483;
+    background: #fff;
     border: 2px  solid #17202A;
     position: relative;
     left: 15px;
@@ -167,16 +175,15 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 100%;
-    background: white;
+    background-color: #fff;
     position: relative;
     left: 144px;
     top: -65px; }
+  .center .diferit {
+    background-color: lime; }
 
 .switcho {
   position: relative;
-  left: 50px;
+  width: 110px;
+  left: 60px;
   top: 0px; }
-
-.opacity1 {
-  -webkit-filter: brightness(120%);
-  filter: brightness(120%); }
