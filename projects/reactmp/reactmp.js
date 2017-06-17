@@ -1,3 +1,4 @@
+//http://buildwithreact.com/tutorial/components
 var DisplayContainer = React.createClass({
     updateValue:function(modifiedValue){
         this.setState({
@@ -26,7 +27,7 @@ var DisplayContainer = React.createClass({
         );
     }
 
-    
+
 });
  
 var RawInput = React.createClass({
@@ -40,3 +41,4 @@ var RawInput = React.createClass({
 });
  
 React.render(<DisplayContainer />,document.getElementById("container"));
+

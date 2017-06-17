@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .container {
   margin: 40px auto auto auto; }
 
