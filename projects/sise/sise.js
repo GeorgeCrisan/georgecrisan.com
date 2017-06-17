@@ -96,7 +96,7 @@ jQuery(function() {
             return 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3';
 
         else if (para == "fail")
-            return 'http://k003.kiwi6.com/hotlink/clrtgq79wz/failsimon.mp3';
+            return 'http://soundjax.com/reddo/79133%5Ebuzzer.mp3';
 
 
     }; //end of audi colors
@@ -133,12 +133,11 @@ jQuery(function() {
             if (wrg === true) {
                 wrg = false;
                 historyUi.pop();
-                alert('a doua');
             }
 
-            if (level === 5) {
+            if (level === 21) {
 
-                alert("You Won... !!! Yohoooo 11");
+                alert("You Won...!!! Yohoooo!!! ");
 
                 $('#count').html("1 <p>count</p>");
                 clearTimeout();
@@ -188,21 +187,10 @@ jQuery(function() {
 
                 });
             }
-
-
-
-
-
-
         } // end of comp part
-
-
-
-
         comPart();
 
         function playerpart() {
-
             //console.log(historyPlayer + "from playerpart at the begging");
             document.getElementById("red").style.pointerEvents = "auto";
             document.getElementById("yellow").style.pointerEvents = "auto";
@@ -253,8 +241,8 @@ jQuery(function() {
                         playAudio(audioChoice('fail'));
                         //level = historyUi.length;
                         historyPlayer = [];
-                        alert('wrong combination');
-                        //$('#count').html(level);
+                        alert('wrong combination. Press start again!');
+                        $('#count').html(level);
                         wrg = true;
 
                         if (strict == true) {
@@ -281,7 +269,7 @@ jQuery(function() {
 
 
     function timeFreq(level) {
-        var tFreq = [800, 500, 400];
+        var tFreq = [800, 600, 550];
 
         if (level < 8)
             return tFreq[0];
@@ -307,7 +295,7 @@ jQuery(function() {
         } else if (switcho.bootstrapSwitch("state") === false) {
 
             startBt.on('click', function() { return; });
-            strictBt.unbind('click');
+
             historyUi = [];
             historyPlayer = [];
             $('#count').css('background-color', '#fff');
@@ -315,10 +303,8 @@ jQuery(function() {
             level = 1;
 
         }
-
         console.log(switcho.bootstrapSwitch("state"));
     });
-
 
     strictBt.on('click', function() {
         strictBulb.toggleClass('diferit');
@@ -328,7 +314,5 @@ jQuery(function() {
             strict = false;
         console.log(strict);
     });
-
-
 
 }); //end of jQuery
