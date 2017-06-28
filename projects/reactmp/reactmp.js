@@ -1,44 +1,57 @@
-//http://buildwithreact.com/tutorial/components
-var DisplayContainer = React.createClass({
-    updateValue:function(modifiedValue){
-        this.setState({
-            value: modifiedValue
-        })
-    },
-    getInitialState:function(){
-        return{
-            value:'Heading\n=======\n\nSub-heading\n-----------\n \n### Another deeper heading\n \nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\nThe rain---not the reign---in\nSpain.\n\n *[Herman Fassett](https://freecodecamp.com/hermanfassett)*'
-        }
-    },
-    rawMarkup: function(value) {
-      var rawMarkup = marked(value, {sanitize: true});
-      return { __html: rawMarkup };
-    },
-    render:function(){
-        return (
-          <div className="row">
-            <div className="col-md-6">
-              <RawInput value={this.state.value} updateValue={this.updateValue}/>
-            </div>
-            <div className="col-md-6">
-              <span dangerouslySetInnerHTML={this.rawMarkup(this.state.value)} />
-            </div>
-          </div>
-        );
-    }
 
 
-});
+ function TheHeader(){ 
+   
+   return (
+    <header className='top'>
+
+      <h1 className='text-center'>Markdown Prviewer </h1>
+      
+    </header>
+      
+)};
+
+class Markup extends React.Component {
+    constructor(){
+      super();
+      this.state = {
+        converter: new showdown.Converter(),
+        value:'\nHeading\n=======\n\nSub-heading\n----------\n \nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\n *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nTo Do:\n\n  * Run\n  * Run Fast\n  * Run Fast From\n  * Run Fast From Unknown\n \nMovies:\n 1. A Dangerous Method\n 2. Demolition\n 3. October Sky\n\n\n*[George Crisan](http://www.georgecrisan.com)*'
+      }
+    }    
  
-var RawInput = React.createClass({
-    update:function(){
-        var modifiedValue=this.refs.inputValue.getDOMNode().value;
-        this.props.updateValue(modifiedValue);
-    },
-    render:function(){
-        return (<textarea rows="22" type="text" ref="inputValue" value={this.props.value} onChange={this.update} className="form-control" />)
-    }
-});
- 
-React.render(<DisplayContainer />,document.getElementById("container"));
+createMarkup(){
+  return {__html: this.state.converter.makeHtml(this.state.value)};
+}
 
+handleChange(event){
+  this.setState({value: event.target.value});
+}
+
+render(){
+    return(<div className='row'>
+             <div className='col-sm-6'>
+             <textarea className='col-xs-10 full-height' type='text' defaultValue = {this.state.value} 
+             onChange = {this.handleChange.bind(this)} id='markdown'></textarea>
+             </div>
+             <div className='col-sm-6'>
+               <div id='renderedarea' className='col-xs-10 full-height'>
+                 <div dangerouslySetInnerHTML={this.createMarkup()}/>
+               </div>
+               
+             </div>
+             </div>
+             );
+
+}
+
+}// end of theMarkdown
+
+const App = () => (
+  <div className='container-fluid'>
+   <TheHeader/>
+   <Markup/>
+  </div>
+);
+
+ReactDOM.render(<App/>,document.getElementById('wrapper'));

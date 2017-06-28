@@ -1,0 +1,1 @@
+"use strict";ReactDOM.render(React.createElement(MyApp,null),document.getElementById("wrapper"));

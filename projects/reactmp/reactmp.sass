@@ -1,16 +1,69 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo')
+@import url('https://fonts.googleapis.com/css?family=Baloo|Courgette')
+$shadows: 10px 10px 15px #333
 *
   box-sizing: border-box 
 
-.wrapper
+a 
+  color: #fff
 
-.container
-  margin: 40px auto auto auto
+a:hover
+  color: red    
+
+a:active
+  color: #fff  
+ 
+
+
+
+
+html,
+body,
+section
+  height: 100vh
+
+body
+  background: #00688B
+  padding: 25px
+  .top
+    font-family: 'Courgette',cursive
+    height: 100px
+    color: teal
+    text-shadow: 1px 2px 1px lime
+#wrapper
+  margin: auto
 
 
 textarea
-  resize: vertical
-  height: 50%
+  position: relative
+  top: 0px
+  left: 100px
+  height: 578px
+  border: 10px solid #fff
+  border-radius: 10px
+  font-size: 17px
+  background: teal
+  color: #fff
+  font-family: Courgette,'Baloo', sans-serif
+  
 
+
+#renderedarea
+  font-family: Courgette,'Baloo', sans-serif
+  margin: auto
+  color: lime
+  height: 578px
+  text-align: left
+  border: 10px solid #fff
+  border-radius: 10px
+  font-size: 17px
+  overflow: scroll
+  overflow-x: hidden
 
   
+  
+  
+
+
+
+
+
