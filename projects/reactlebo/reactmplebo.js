@@ -1,6 +1,6 @@
 
 
-/*class Leader extends React.Component{
+class Top extends React.Component{
     render(){
         return (
             <tr className='evengrey'>
@@ -15,59 +15,60 @@
 
 } // end of leader classs
 
-class Leaderboard extends React.Component{
-	constructor(props){
-        super(props);
-        this.state = {
-            camper: [],
-            sort: 'Recent'
-        };
+class Leaderboard extends React.Component {
+    constructor(props){
+	super(props);
+	  this.state = {
+         importedArray : [],
+		 status: 'last30'
+	  }
+ } //end of constructor
 
-    }
-	
+   recent () {
+       let self = this;
+	   $.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent',(data)=>{
+           self.setState({importedArray:data,status: 'last30'});
+	   });
 
-	recent () {
-		let self = this;
-		$.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent', function(data) {
-			self.setState({camper: data, sort: 'Recent'});
-		});
-	}
-    
-	alltime(){
-		let self = this;
-		$.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime', function(data) {
-			self.setState({camper: data, sort: 'AllTime'});
-		});
-	} 
+   }// end of recent
 
-    componentDidMount() {
+   alltime (){
+	   let self = this;
+	   $.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime',(data)=>{
+		   let self = this;
+		  self.setState({importedArray:data,status:'allTimeRecord'}); 
+	   });
+   }
+    componentDidMount(){
 		this.recent();
-	}
-    
-	render() {
-		var leaderboard = this.state.camper.map(function(person, idx) {
-			return (
-				<Leader clasName='oddgrey' key={idx} rank={idx + 1} image={person.img} name={person.username} recentPoints={person.recent} allPoints={person.alltime} />
-			);
-		});
-		return (
-			<table className="hover">
-				<thead>
-					<tr >
-						<th>#</th>
-						<th>Camper Name</th>
-						<th><a href="#" onClick={this.recent.bind(this)}>Points in past 30 days {this.state.sort === 'Recent' ? '▼' : ''}</a></th>
-						<th><a href="#" onClick={this.alltime.bind(this)}>All time points {this.state.sort === 'AllTime' ? '▼' : ''}</a></th>
-					</tr>
-				</thead>
-				<tbody >
-					{leaderboard}
-				</tbody>
-			</table>
-		);
-	}
-}// end of Leaderboard 
+	} // end of component
+
+	render(){
+          let lbcontent = this.state.importedArray.map(function(elm,idx){
+			  return (
+				  <Top key={idx} rank= {idx + 1} image={elm.img} name={elm.username} recentPoints={elm.recent} allPoints={elm.alltime} />
+			  );
+		  });// end of leaderboard
+        return (
+             <table className='hover'>
+			 <thead>
+				 <tr>
+				   <th>#</th>
+				   <th>Camper Name</th>
+				   <th><a href='#' onClick={this.recent.bind(this)} >{this.state.status ==='last30'? '->' : ' '}Last 30 days {this.state.status ==='last30'? '<-' : ' '}</a> </th>
+				   <th><a href='#' onClick={this.alltime.bind(this)}>{this.state.status === 'allTimeRecord' ? '->' : ' '} Top All time {this.state.status === 'allTimeRecord' ? '<-' : ' '}</a> </th>
+				 </tr> 
+			 </thead>
+			 <tbody> 
+			   {lbcontent}
+			  </tbody>  
+             </table>            
+
+		); //end of return inside render
 
 
+	}//end of render
 
-ReactDOM.render(<Leaderboard />, document.getElementById('wrapper')); */
+} // end of clas Leaderboard
+ReactDOM.render(<Leaderboard />,document.getElementById('wrapper'));
+

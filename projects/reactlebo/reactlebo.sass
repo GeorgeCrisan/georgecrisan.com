@@ -7,17 +7,20 @@ a
   color: #fff
 
 a:hover
-  color: red    
-  text-decoration: none
+  color: #fff !important
+  text-decoration: none !important
 
 a:active
-  color: #fff  
+  color: #fff !important
   text-decoration: none
   
 a:visited  
   color: #fff  
   text-decoration: none
   
+a:focus  
+  color: blue !important
+  text-decoration: none  
  
 
 
@@ -48,10 +51,12 @@ body
 
 
 #wrapper 
-  width: 600px
+  width: 650px
+  display: flex
   margin: auto
   
   table
+    width: 650px
     thead
       tr
         height: 50px
@@ -59,7 +64,9 @@ body
         font-size: 15px
         border: 4px solid #fff
         th 
-          padding: 10px
+          padding: 15px
+          position: relative
+          left: 20px
           color: #fff
         th:first-child 
           position: relative
