@@ -8,7 +8,7 @@
   top: 50px
   h1
     width: 200px
-    font-family: "Pacifico"
+    font-family: "Pacifico", san-serif
     @include rotateEffect
     position: relative
     top: 35px
@@ -23,12 +23,25 @@
     image: url('../img/index/work-677582_1280.jpg')
     position: 80% 63%
     repeat: no-repeat
+  h3
+    color: #fff
+    font-size: 16px
+    text-align: center
+    text-shadow: 1px 1px 3px  grey
+    font-family: 'Fira Sans','Pacifico', serif
+    position: relative
+    top: 365px
 
 
 .someaddsense
   margin: auto
   margin-top: 30px
   width: 80%
+
+@media (max-width: 1200px)
+  #banner
+    h3 
+      display: none  
 
 
 
