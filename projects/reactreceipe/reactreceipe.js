@@ -1,74 +1,67 @@
 
+//**Load the ReactBootstrap */
+//https://codepen.io/GeorgeCrisan/pen/jwerxZ?editors=0010
+// send some basic recipe items in local Storage
+// Load Recipe Items or set default Recipe Items
+/*var recipes = (typeof localStorage["recipeBook"] != "undefined") ? JSON.parse(localStorage["recipeBook"]) : [
+  {title: "Pumpkin Pie", ingredients: ["Pumpkin Puree", "Sweetened Condensed Milk", "Eggs", "Pumpkin Pie Spice", "Pie Crust"]}, 
+  {title: "Spaghetti", ingredients: ["Noodles", "Tomato Sauce", "(Optional) Meatballs"]}, 
+  {title: "Onion Pie", ingredients: ["Onion", "Pie Crust", "Sounds Yummy right?"]}
+], globalTitle = "", globalIngredients = []; // Define global title and ingredients */
 
-class Top extends React.Component{
-    render(){
-        return (
-            <tr className='evengrey'>
-				<td>{this.props.rank}</td>
-				<td><a href={"https://www.freecodecamp.com/" + this.props.name} target="_blank"><img src={this.props.image} /> {this.props.name}</a></td>
-				<td>{this.props.recentPoints}</td>
-				<td>{this.props.allPoints}</td>
-			</tr>
+class RecipeBox extends React.Component {
+	constructor(props){
+		super(props);
+		 this.state = {
+       recipeStoragekey :'_grdp_recipes',
+       recipes : []
+     }//end of state
+	}//end of constructor
 
-        );
+  newRecipe(){
+    let r = [{name:'New Recipe',ingredients:""}].concat(this.state.recipes);
+      this.saveRecipes(r).bind(this);
+  }
+ 
+
+updateRecipe (index,name, ingredients){ 
+   let r = this.state.recipe;
+   r[index].name = name;
+   r[index].ingredients = ingredients;
+   this.saveRecipes(r);        
+ }
+ 
+  saveRecipes(recipes){
+    localStorage.setItem(this.recipeStoragekey,JSON.stringify(recipes));
+     
+  }
+
+ removeRecipe (index){
+   let r = this.state.recipes;
+   this.saveRecipes(r.slice(0,index).concat(r.slice(index + 1)));
     }
 
-} // end of leader classs
+  ComponentDidMount(){
+    let rec = localStorage.getItem(this.recipeStoragekey);
+    if(rec)
+      this.setState({recipes: JSON.parse(rec)});
+  }  
 
-class Leaderboard extends React.Component {
-    constructor(props){
-	super(props);
-	  this.state = {
-         importedArray : [],
-		 status: 'last30'
-	  }
- } //end of constructor
 
-   recent () {
-       let self = this;
-	   $.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent',(data)=>{
-           self.setState({importedArray:data,status: 'last30'});
-	   });
+ render(){
+   let rows = [];
+   if(this.state.recipes.length === 0){
+       row.push(
+         <div id='recipe-none' className='recipe panel panel-info'></div>
 
-   }// end of recent
+       )
 
-   alltime (){
-	   let self = this;
-	   $.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime',(data)=>{
-		   let self = this;
-		  self.setState({importedArray:data,status:'allTimeRecord'}); 
-	   });
+
    }
-    componentDidMount(){
-		this.recent();
-	} // end of component
-
-	render(){
-          let lbcontent = this.state.importedArray.map(function(elm,idx){
-			  return (
-				  <Top key={idx} rank= {idx + 1} image={elm.img} name={elm.username} recentPoints={elm.recent} allPoints={elm.alltime} />
-			  );
-		  });// end of leaderboard
-        return (
-             <table className='hover'>
-			 <thead>
-				 <tr>
-				   <th>#</th>
-				   <th>Camper Name</th>
-				   <th><a href='#' onClick={this.recent.bind(this)} >{this.state.status ==='last30'? '->' : ' '}Last 30 days {this.state.status ==='last30'? '<-' : ' '}</a> </th>
-				   <th><a href='#' onClick={this.alltime.bind(this)}>{this.state.status === 'allTimeRecord' ? '->' : ' '} Top All time {this.state.status === 'allTimeRecord' ? '<-' : ' '}</a> </th>
-				 </tr> 
-			 </thead>
-			 <tbody> 
-			   {lbcontent}
-			  </tbody>  
-             </table>            
-
-		); //end of return inside render
+ }
 
 
-	}//end of render
+}//end of recipe Box
 
-} // end of clas Leaderboard
-ReactDOM.render(<Leaderboard />,document.getElementById('wrapper'));
 
+ReactDOM.render(<RecipeBox />, document.getElementById('wrapper'));
