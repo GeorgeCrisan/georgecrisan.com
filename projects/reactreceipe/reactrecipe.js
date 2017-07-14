@@ -40,7 +40,38 @@ class DataStorage {
       //save the data in local sotrage via save data 
       // and return it
 
+    readData(){
+       let data = JSON.parse(localStorage.getItem(DataStorage.DATA_KEY));
+       return (data && data.length) ? data : this.initialData();
+    }  
 
-}//end of class Data Storage
 
-//DataStorage.DATA_KEY = "george_recipes"; // DATA_KEY is a variable property which holds a string for localstorage desigantion
+}//end of class Data Storage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/************Check what it does modal please ********/
+
+const ModalWrapper = (props) => {
+    const handleBackgroundClick = (e) =>{
+      if(e.target === e.currentTarget) 
+          props.hideModal();
+    } //end of handleBackgroundClick
+
+    const onOk = ()=>{
+      props.onOk();
+      props.hideModal();
+    }//end of onOk
+
+    const okButton = props.showOk ? (<button onClick={onOk} disabled={props.okDisabled}>{props.okText} </button>): null;
+
+    return (
+      <div className='overlay'>
+        <div noClick={handleBackgroundClick} className='content'>
+         <header>
+           <h1>{props.title}</h1>
+         </header>
+        </div>
+      </div>
+    );
+}// end of ModalWrapper
+
+/************Check what it does modal please ********/
