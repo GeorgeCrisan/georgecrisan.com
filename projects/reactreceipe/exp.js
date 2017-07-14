@@ -1,4 +1,6 @@
+
 class DataStorage {
+
    static DATA_KEY = 'coca';
   resetData() {
     let recipes = this.initialDate();
@@ -120,21 +122,21 @@ const ModalWrapper = props => {
 
 ModalWrapper.propTypes = {
   // props
-  title: React.PropTypes.string,
-  showOk: React.PropTypes.bool,
-  okText: React.PropTypes.string,
-  okDisabled: React.PropTypes.bool,
-  width: React.PropTypes.number,
-  style: React.PropTypes.object,
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.element,
-    React.PropTypes.string,
+  title: PropTypes.string,
+  showOk: PropTypes.bool,
+  okText: PropTypes.string,
+  okDisabled: PropTypes.bool,
+  width: PropTypes.number,
+  style: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.element,
+   PropTypes.string,
   ]).isRequired,
 
   // methods
-  hideModal: React.PropTypes.func,
-  onOk: React.PropTypes.func,
+  hideModal: PropTypes.func,
+  onOk: PropTypes.func,
 };
 
 ModalWrapper.defaultProps = {
