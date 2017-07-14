@@ -1,10 +1,8 @@
 
 
 class DataStorage {
-     constructor(){
-       this.DATA_KEY = 'george_recipes';
-     }
-
+    static DATA_KEY = "george_recipes"; // DATA_KEY is a variable property which holds a string for localstorage desigantion
+ 
     initialData(){
       return [{
         id:1,
@@ -29,9 +27,20 @@ class DataStorage {
       }];
     } // end of initialData, an array of objects with predifined recipes
     
-    
+    saveData(rec){
+      localStorage.setItem(DataStorage.DATA_KEY,JSON.stringify(rec));
+    }//save data is a function to set item in local storage using the data key first parameter
+    // and make jeson the argument of the function, as second parameter
+
+    resetData(){
+       let recipes = this.initialData();
+       saveData(recipes);
+       return recipes;
+    } // let a variable to hold initial data from the method
+      //save the data in local sotrage via save data 
+      // and return it
 
 
 }//end of class Data Storage
 
-//DataStorage.DATA_KEY = "george_recipes";
+//DataStorage.DATA_KEY = "george_recipes"; // DATA_KEY is a variable property which holds a string for localstorage desigantion
