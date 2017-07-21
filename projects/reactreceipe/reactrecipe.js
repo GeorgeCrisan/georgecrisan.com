@@ -26,21 +26,22 @@ class DataStorage {
    } // end of initialData, an array of objects with predifined recipes
 
    saveData(red){
-     localStorage.setItem(DataStorage.DATA_KEY,(JSON.stringify(red)));
+     localStorage.setItem(this.DATA_KEY,(JSON.stringify(red)));
    }//save data is a function to set item in local storage using the data key first parameter
     // and make json the argument of the function, as second parameter
 
     resetData(){
       let recipes = this.initialData();
-      saveData(recipes);
+      console.log(recipes);
+      this.saveData(recipes);
       return recipes;
     }
 
     readData(){
-      let data = JSON.parse(localStorage.getItem(DataStorage.DATA_KEY));
+      let data = JSON.parse(localStorage.getItem(this.DATA_KEY));
       return (data && data.length) ? data : this.initialData();
     }
-}//end of DataStorage
+}//end of DataStorage*********************************************************************************************
 
 
 const ModalWrapper = (props) => {
@@ -54,7 +55,7 @@ const ModalWrapper = (props) => {
      props.hideModal();
    }
 
-   const okButton = props.showOk ? (<button onClick={onOk} disabled={props.okDispabled}> {props.okText} </button>) : null;
+   const okButton = props.showOk ? (<button onClick={onOk} disabled={props.okDisabled}> {props.okText} </button>) : null;
 
    return(
       <div className='overlay'>
@@ -69,11 +70,47 @@ const ModalWrapper = (props) => {
    );
 }//end of modal wrapper
 
-ModalWrapper.PropTypes = {
+ModalWrapper.propTypes = {
+       title: PropTypes.string,
+       showOk: PropTypes.bool,
+       okText: PropTypes.string,
+       okDisabled: PropTypes.bool,
+       width: PropTypes.number,
+       style: PropTypes.object,
+       children: PropTypes.oneOfType([
+         PropTypes.array,
+         PropTypes.element,
+         PropTypes.string
+       ]).isRequired,
+       hideModal: PropTypes.func,
+       onOk: PropTypes.func
+};
 
 
+ModalWrapper.defaultProps = {
+   title: '',
+   showOk: true,
+   okText: 'OK',
+   onDisabled: false,
+   width: 400,
+   onOk: () =>{}
+};  // I am declaring de default props for Modal wrapper 
+
+const ModalSelector = (props) => {
+  switch (props.currentModal){
+    case 'edit':
+    case 'add':
+      return <ChangeDataModal {...props}/>; // spread operator
+    case 'view':
+      return <ViewDataModal {...props} />;
+    default:
+      return null;  
+  }
 }
 
+class ChangeDataModal extends React.Component {
+    
+}
 
 
 ReactDOM.render(<App />,
