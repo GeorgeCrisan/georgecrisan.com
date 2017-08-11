@@ -26,7 +26,7 @@ class DataStorage {
    } // end of initialData, an array of objects with predifined recipes
 
    saveData(red){
-     localStorage.setItem(this.DATA_KEY,(JSON.stringify(red)));
+     localStorage.setItem(DataStorage.DATA_KEY,(JSON.stringify(red)));
    }//save data is a function to set item in local storage using the data key first parameter
     // and make json the argument of the function, as second parameter
 
@@ -108,9 +108,10 @@ const ModalSelector = (props) => {
   }
 }
 
-class ChangeDataModal extends React.Component {
+// class ChangeDataModal extends React.Component {
     
-}
+//}
+
 
 
 ReactDOM.render(<App />,
