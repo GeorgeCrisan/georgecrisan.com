@@ -1,118 +1,66 @@
-class DataStorage {
-  static DATA_KEY = 'george_recipes'; // DATA_KEY is a variable property which holds a string for localstorage desigantion
-
-   initialData() {
-     return [{
-        id:1,
-        title:'Ciorba de burta',
-        ingredients: ['1k de burta','legume','2 litir de apa'],
-        description:'Cirba de la buna fiarta de dimineata'
-      },{
-        id:2,
-        title:'Ciorba de persioare',
-        ingredients: ['orez','carne de vita','apa','legume'],
-        description:'se face rar nu se fierbe de dimineata'
-      },{
-        id:3,
-        title:'Ciorba de fasole',
-        ingredients: ['fasole ','apa ','niste carne ','condimente'],
-        description:'cirba de fasole mai rar'
-      },{
-        id:4,
-        title:'Ciorba de oaie',
-        ingredients: ['carne de oaie','legume',''],
-        description:'se fierbe fasolea si gata supa'
-      }];
-   } // end of initialData, an array of objects with predifined recipes
-
-   saveData(red){
-     localStorage.setItem(DataStorage.DATA_KEY,(JSON.stringify(red)));
-   }//save data is a function to set item in local storage using the data key first parameter
-    // and make json the argument of the function, as second parameter
-
-    resetData(){
-      let recipes = this.initialData();
-      console.log(recipes);
-      this.saveData(recipes);
-      return recipes;
-    }
-
-    readData(){
-      let data = JSON.parse(localStorage.getItem(this.DATA_KEY));
-      return (data && data.length) ? data : this.initialData();
-    }
-}//end of DataStorage*********************************************************************************************
-
-
-const ModalWrapper = (props) => {
-   const handleBackgroundClick = (e) =>{
-     if(e.target === e.currentTarget)
-       props.hideModal();
-   }
-
-   const onOk = () =>{
-     props.onOk();
-     props.hideModal();
-   }
-
-   const okButton = props.showOk ? (<button onClick={onOk} disabled={props.okDisabled}> {props.okText} </button>) : null;
-
-   return(
-      <div className='overlay'>
-        <div onClick={handleBackgroundClick} className='content'>
-         <header>
-          <h1>{props.title}</h1>
-         </header>
-         {props.children}
-         {okButton}
-         </div>
-       </div>  
-   );
-}//end of modal wrapper
-
-ModalWrapper.propTypes = {
-       title: PropTypes.string,
-       showOk: PropTypes.bool,
-       okText: PropTypes.string,
-       okDisabled: PropTypes.bool,
-       width: PropTypes.number,
-       style: PropTypes.object,
-       children: PropTypes.oneOfType([
-         PropTypes.array,
-         PropTypes.element,
-         PropTypes.string
-       ]).isRequired,
-       hideModal: PropTypes.func,
-       onOk: PropTypes.func
-};
-
-
-ModalWrapper.defaultProps = {
-   title: '',
-   showOk: true,
-   okText: 'OK',
-   onDisabled: false,
-   width: 400,
-   onOk: () =>{}
-};  // I am declaring de default props for Modal wrapper 
-
-const ModalSelector = (props) => {
-  switch (props.currentModal){
-    case 'edit':
-    case 'add':
-      return <ChangeDataModal {...props}/>; // spread operator
-    case 'view':
-      return <ViewDataModal {...props} />;
-    default:
-      return null;  
+class App extends React.Component {
+  constructor(props){
+  super(props);
+  this.state = {
+    todos // same thing ast todos:todos just in ES6 syntax
   }
-}
+  }
 
-// class ChangeDataModal extends React.Component {
-    
-//}
+  render() {
+    return (
+      <div>
+        <h1> Salut This is React todos List</h1>
+        <TodosList todos = {this.state.todos }/>
+      </div>
+    )
+  }
+}// this is the clas I am rendering and where I am adding components
+
+class TodosList extends React.Component {
+  renderItems() {
+    // method declared above to use for mapping the todos
+    return 
+  }
+  render() {
+    return (
+
+      <table>
+        <TodoListHeaders />
+        <tr> {this.renderItems()} </tr> 
+      </table>
+
+    )
+  }
+}//end of TodosList
+
+class TodoListHeaders extends React.Component {
+  render() {
+    return (
+
+      <thead>
+        <tr>
+          <th>Tasks  </th>
+          <th>Actions </th>
+        </tr>
+      </thead>
 
 
 
-ReactDOM.render(<App />,
-document.getElementById('wrapper'));
+    );
+  }
+}//TodoListHeaders
+
+const todos = [{
+  task: 'make ract tutorial',
+  isComplted: false
+},
+{
+  task: 'sa invat',
+  isComplted: true
+}]; // end of todos
+
+
+
+
+
+ReactDOM.render(<App />, document.getElementById('wrapper'));

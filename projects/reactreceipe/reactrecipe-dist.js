@@ -1,1 +1,125 @@
-"use strict";function _classCallCheck(e,a){if(!(e instanceof a))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,a){for(var t=0;t<a.length;t++){var r=a[t];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(a,t,r){return t&&e(a.prototype,t),r&&e(a,r),a}}(),DataStorage=function(){function e(){_classCallCheck(this,e)}return _createClass(e,[{key:"initialData",value:function(){return[{id:1,title:"Ciorba de burta",ingredients:["1k de burta","legume","2 litir de apa"],description:"Cirba de la buna fiarta de dimineata"},{id:2,title:"Ciorba de persioare",ingredients:["orez","carne de vita","apa","legume"],description:"se face rar nu se fierbe de dimineata"},{id:3,title:"Ciorba de fasole",ingredients:["fasole ","apa ","niste carne ","condimente"],description:"cirba de fasole mai rar"},{id:4,title:"Ciorba de oaie",ingredients:["carne de oaie","legume",""],description:"se fierbe fasolea si gata supa"}]}},{key:"saveData",value:function(a){localStorage.setItem(e.DATA_KEY,JSON.stringify(a))}},{key:"resetData",value:function(){var e=this.initialData();return console.log(e),this.saveData(e),e}},{key:"readData",value:function(){var e=JSON.parse(localStorage.getItem(this.DATA_KEY));return e&&e.length?e:this.initialData()}}]),e}();DataStorage.DATA_KEY="george_recipes";var ModalWrapper=function(e){var a=function(a){a.target===a.currentTarget&&e.hideModal()},t=function(){e.onOk(),e.hideModal()},r=e.showOk?React.createElement("button",{onClick:t,disabled:e.okDisabled}," ",e.okText," "):null;return React.createElement("div",{className:"overlay"},React.createElement("div",{onClick:a,className:"content"},React.createElement("header",null,React.createElement("h1",null,e.title)),e.children,r))};ModalWrapper.propTypes={title:PropTypes.string,showOk:PropTypes.bool,okText:PropTypes.string,okDisabled:PropTypes.bool,width:PropTypes.number,style:PropTypes.object,children:PropTypes.oneOfType([PropTypes.array,PropTypes.element,PropTypes.string]).isRequired,hideModal:PropTypes.func,onOk:PropTypes.func},ModalWrapper.defaultProps={title:"",showOk:!0,okText:"OK",onDisabled:!1,width:400,onOk:function(){}};var ModalSelector=function(e){switch(e.currentModal){case"edit":case"add":return React.createElement(ChangeDataModal,e);case"view":return React.createElement(ViewDataModal,e);default:return null}};ReactDOM.render(React.createElement(App,null),document.getElementById("wrapper"));
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = {
+      todos: todos // same thing ast todos:todos just in ES6 syntax
+    };
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'h1',
+          null,
+          ' Salut This is React todos List'
+        ),
+        React.createElement(TodosList, { todos: this.state.todos })
+      );
+    }
+  }]);
+
+  return App;
+}(React.Component); // this is the clas I am rendering and where I am adding components
+
+var TodosList = function (_React$Component2) {
+  _inherits(TodosList, _React$Component2);
+
+  function TodosList() {
+    _classCallCheck(this, TodosList);
+
+    return _possibleConstructorReturn(this, (TodosList.__proto__ || Object.getPrototypeOf(TodosList)).apply(this, arguments));
+  }
+
+  _createClass(TodosList, [{
+    key: 'renderItems',
+    value: function renderItems() {
+      // method declared above to use for mapping the todos
+      return;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'table',
+        null,
+        React.createElement(TodoListHeaders, null),
+        React.createElement(
+          'tr',
+          null,
+          ' ',
+          this.renderItems(),
+          ' '
+        )
+      );
+    }
+  }]);
+
+  return TodosList;
+}(React.Component); //end of TodosList
+
+var TodoListHeaders = function (_React$Component3) {
+  _inherits(TodoListHeaders, _React$Component3);
+
+  function TodoListHeaders() {
+    _classCallCheck(this, TodoListHeaders);
+
+    return _possibleConstructorReturn(this, (TodoListHeaders.__proto__ || Object.getPrototypeOf(TodoListHeaders)).apply(this, arguments));
+  }
+
+  _createClass(TodoListHeaders, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'thead',
+        null,
+        React.createElement(
+          'tr',
+          null,
+          React.createElement(
+            'th',
+            null,
+            'Tasks  '
+          ),
+          React.createElement(
+            'th',
+            null,
+            'Actions '
+          )
+        )
+      );
+    }
+  }]);
+
+  return TodoListHeaders;
+}(React.Component); //TodoListHeaders
+
+var todos = [{
+  task: 'make ract tutorial',
+  isComplted: false
+}, {
+  task: 'sa invat',
+  isComplted: true
+}]; // end of todos
+
+
+ReactDOM.render(React.createElement(App, null), document.getElementById('wrapper'));
