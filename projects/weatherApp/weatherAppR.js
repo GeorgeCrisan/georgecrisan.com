@@ -14,12 +14,12 @@ jQuery(function () {
     }); // end of Promise
   } // end of get Ip Info
 
-  getIpInfo('http://ip-api.com/json').then(function (result) {
+  getIpInfo('https://ipapi.co/json/').then(function (result) {
 
     let userData = JSON.parse(result),
       apiKey = '&APPID=29c36cf2524b2fe81f752daf790a2dd8',
-      baseWeatherRequest = 'http://api.openweathermap.org/data/2.5/weather?',
-      parametri = 'lat=' + userData.lat + '&lon=' + userData.lon;
+      baseWeatherRequest = 'https://api.openweathermap.org/data/2.5/weather?',
+      parametri = 'lat=' + userData.latitude + '&lon=' + userData.longitude;
 
 
     console.log(parametri);
@@ -42,7 +42,7 @@ jQuery(function () {
       console.log(weatherData);
       //Here I have the weather data and I can do my madness
       $('#location').html(userData.city + ", " + userData.country);
-      $('#latAndLong').html("Lat: " + userData.lat.toFixed(2) + ", " + "Lon: " + userData.lon.toFixed(2));
+      $('#latAndLong').html("Lat: " + userData.latitude.toFixed(2) + ", " + "Lon: " + userData.longitude.toFixed(2));
       $('#temp').html(Math.round(weatherData.main.temp - 273.15) + "&deg; C");
       $('#humidity').html(weatherData.main.humidity);
       $('#humidity').html(weatherData.main.humidity + " %");
