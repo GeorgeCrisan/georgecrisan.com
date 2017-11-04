@@ -16,7 +16,8 @@ jQuery(function () {
 
   getIpInfo('https://ipapi.co/json/').then(function (result) {
 
-    let userData = JSON.parse(result),
+
+    let userData = JSON.parse(result) ,
       apiKey = '&APPID=29c36cf2524b2fe81f752daf790a2dd8',
       baseWeatherRequest = 'https://api.openweathermap.org/data/2.5/weather?',
       parametri = 'lat=' + userData.latitude + '&lon=' + userData.longitude;
