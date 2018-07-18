@@ -5,7 +5,7 @@
 
 .center-class { margin: 0 auto; }
 
-.custom-portofolio-container { background: #282828; background-size: 40px 40px; margin: 0; padding: 0; }
+.custom-portofolio-container { background: #282828; background-image: -webkit-gradient(linear, left bottom, left top, color-stop(24%, transparent), color-stop(25%, rgba(255, 255, 255, 0.05)), color-stop(26%, rgba(255, 255, 255, 0.05)), color-stop(27%, transparent), color-stop(74%, transparent), color-stop(75%, rgba(255, 255, 255, 0.05)), color-stop(76%, rgba(255, 255, 255, 0.05)), color-stop(77%, transparent), to(transparent)), -webkit-gradient(linear, left top, right top, color-stop(24%, transparent), color-stop(25%, rgba(255, 255, 255, 0.05)), color-stop(26%, rgba(255, 255, 255, 0.05)), color-stop(27%, transparent), color-stop(74%, transparent), color-stop(75%, rgba(255, 255, 255, 0.05)), color-stop(76%, rgba(255, 255, 255, 0.05)), color-stop(77%, transparent), to(transparent)); background-image: -webkit-linear-gradient(bottom, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent), -webkit-linear-gradient(left, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent); background-image: -o-linear-gradient(bottom, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent), -o-linear-gradient(left, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent); background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent); background-size: 40px 40px; margin: 0; padding: 0; }
 
 #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 10%; }
 
@@ -83,27 +83,25 @@ body { background: #282828; background-image: -webkit-gradient(linear, left bott
 
 .jumbotron-custom .little-box { color: white; font-family: 'Mina', sans-serif; padding: 60px 0px; text-align: center; }
 
-.jumbotron-custom .little-box h1 { font-size: 20px; color: white; text-shadow: 1px 1px 1px #2e6c8a; width: 60%; margin: auto; padding: 20px 10px 0px 10px; }
+.jumbotron-custom .little-box h1 { font-size: 20px; color: white; background: black; width: 60%; margin: auto; padding: 20px 10px 0px 10px; border-radius: 30px 30px 0 0; }
 
-.jumbotron-custom .little-box p { font-size: 20px; text-shadow: 1px 1px 1px #2e6c8a; width: 60%; margin: auto; padding: 10px; }
+.jumbotron-custom .little-box p { font-size: 20px; background: black; width: 60%; margin: auto; padding: 10px; border-radius: 0 0 30px 30px; }
 
 @media only screen and (max-width: 467px) { .sidenav { background-color: rgba(24, 41, 53, 0.9); }
   .sidenav a { font-size: 18px; }
   .jumbotron-custom { height: 255px; }
-  .jumbotron-custom .little-box { color: white; padding: 70px 40px; }
-  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: autos; font-size: 14px; text-align: center; width: 100%; }
-  .jumbotron-custom .little-box p { width: 100%; text-align: center; font-size: 14px; } }
+  .jumbotron-custom .little-box { color: white; padding: 110px 40px; }
+  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; font-size: 15px; text-align: center; width: 90%; } }
 
 @media only screen and (min-width: 467px) and (max-width: 900px) { .sidenav { background-color: rgba(24, 41, 53, 0.8); }
   .sidenav a { font-size: 18px; }
-  .jumbotron-custom { height: 220px; }
-  .jumbotron-custom .little-box { color: white; padding: 70px 60px; }
-  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: autos; font-size: 16px; text-align: center; width: 90%; }
-  .jumbotron-custom .little-box p { width: 90%; text-align: center; font-size: 16px; } }
+  .jumbotron-custom { height: 200px; }
+  .jumbotron-custom .little-box { color: white; padding: 10px 60px; }
+  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: 0 10%; font-size: 19px; text-align: center; width: 90%; }
+  .jumbotron-custom .little-box p { width: 100%; font-size: 18px; } }
 
 @media only screen and (min-width: 900px) and (max-width: 1300px) { .sidenav { background-color: rgba(24, 41, 53, 0.8); }
   .sidenav a { font-size: 18px; }
-  .jumbotron-custom { height: 250px; }
-  .jumbotron-custom .little-box { color: white; padding: 70px; }
-  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: autos; font-size: 20px; text-align: center; width: 80%; }
-  .jumbotron-custom .little-box p { width: 80%; text-align: center; font-size: 20px; } }
+  .jumbotron-custom { height: 200px; }
+  .jumbotron-custom .little-box { color: white; padding: 100px 100px; }
+  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: 0 10%; font-size: 19px; text-align: center; } }
