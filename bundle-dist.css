@@ -11,13 +11,13 @@
 
 #particles-js { position: fixed; top: 0; left: 0; background-attachment: fixed; }
 
-.box1 { display: block; text-align: center; width: 20%; max-width: 50%; min-width: 200px; background: white; height: 260px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; margin: 20px; border: 2px solid #282828; border-radius: 24px; z-index: 100; }
+.box1 { display: block; text-align: center; width: 20%; max-width: 50%; min-width: 200px; background: white; height: 260px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; margin: 20px; border: 1px solid white; z-index: 100; }
 
-.box1 a { width: 100%; height: 100%; background: black; text-decoration: none; z-index: 100; cursor: pointer; border-radius: 20px; }
+.box1 a { width: 100%; height: 100%; background: black; text-decoration: none; z-index: 100; cursor: pointer; }
 
-.box1 a img { width: 100%; height: 100%; border-radius: 20px; }
+.box1 a img { width: 100%; height: 100%; }
 
-.box1 .cover-to-hide { position: relative; background: rgba(46, 108, 138, 0.9); height: 100%; top: -100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; opacity: 0; z-index: 5; cursor: pointer; border-radius: 20px; }
+.box1 .cover-to-hide { position: relative; background: rgba(46, 108, 138, 0.9); height: 100%; top: -100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; opacity: 0; z-index: 5; cursor: pointer; -webkit-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; }
 
 .box1 .cover-to-hide i { color: white; }
 
@@ -25,9 +25,9 @@
 
 .box1 .cover-to-hide p { color: white; font-family: 'Mina', Courier New, Courier, monospace; font-size: 16px; margin: 10px; }
 
-.box1 .cover-to-hide p:first-child, .box1 .cover-to-hide p:last-child { text-decoration: none; background: #282828; color: #3ba3c7; font-size: 14px; border-radius: 100px 0 100px 0px; padding-top: 5px; }
+.box1 .cover-to-hide p:first-child, .box1 .cover-to-hide p:last-child { text-decoration: none; background: #282828; color: #3ba3c7; font-size: 14px; border-radius: 0 0 0 0px; padding-top: 5px; }
 
-.box1:hover { -webkit-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); -webkit-box-shadow: 2px 2px 5px black; box-shadow: 2px 2px 5px black; }
+.box1:hover { -webkit-box-shadow: 1px 1px 8px white; box-shadow: 1px 1px 8px white; }
 
 #portofolio-links { color: white; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row nowrap; flex-flow: row nowrap; font-family: 'Mina', sans-serif; height: 60px; padding: 0; margin: 0 20px; }
 
