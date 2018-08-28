@@ -101,12 +101,12 @@ body { background: -webkit-gradient(linear, left top, right bottom, from(#4c4c4c
   .sidenav a { font-size: 18px; }
   .jumbotron-custom { height: 220px; }
   .jumbotron-custom .little-box { color: white; padding: 70px 60px; }
-  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: autos; font-size: 16px; text-align: center; width: 90%; }
+  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: auto; font-size: 16px; text-align: center; width: 90%; padding: 20px 0 0 0; }
   .jumbotron-custom .little-box p { width: 90%; text-align: center; font-size: 16px; } }
 
 @media only screen and (min-width: 900px) and (max-width: 1300px) { .sidenav { background-color: rgba(24, 41, 53, 0.8); }
   .sidenav a { font-size: 18px; }
   .jumbotron-custom { height: 250px; }
   .jumbotron-custom .little-box { color: white; padding: 70px; }
-  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: autos; font-size: 20px; text-align: center; width: 80%; }
+  .jumbotron-custom .little-box h1 { font-family: 'Mina', sans-serif; margin: auto; font-size: 20px; text-align: center; width: 80%; padding: 20px 0 0 0; }
   .jumbotron-custom .little-box p { width: 80%; text-align: center; font-size: 20px; } }
