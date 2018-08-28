@@ -69,6 +69,7 @@ $('.navbar-nav>a').on('click', function(){
 function runPortofolio(){
       
     _.forEach($('.box1 a img'),function(element,key){
+      console.log(key);
           $(element).attr('src','assets/images/project' + key + '.jpg');     
           
     });
