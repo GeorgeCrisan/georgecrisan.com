@@ -1,5 +1,5 @@
 $(function(){
-
+console.log('ready to go');
 
 $("a").on('click', function(event) {
 
@@ -76,6 +76,28 @@ function runPortofolio(){
 
 } 
 
+function workwith(){
+      
+
+       let nodes = [];
+       
+       for(let i = 0; i < 8; i++){
+
+          let node = document.createElement('img');
+          node.src = 'assets/images/icons/ico' + i + '.png';
+          nodes.push(node);
+       }
+ 
+
+
+         $('#work-with').append(...nodes);
+
+     console.log(nodes[5].src,'aici');
+
+
+
+}
+
 function navigationFunc(){
     $('.menu-button').click(function(){
         
@@ -109,6 +131,7 @@ function navigationFunc(){
 
     runPortofolio();
     navigationFunc();
+    workwith();
     
 particlesJS({
   "particles": {
