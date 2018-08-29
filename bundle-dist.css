@@ -65,23 +65,34 @@ main { width: 80%; margin: auto; }
 
 .container-am .qualifications ul li { color: white; text-decoration: none; font-size: 18px; }
 
-.contact { margin: 50px auto 50px auto; width: 80%; background: #3e4043; }
+.contact { margin: 50px auto 50px auto; width: 57%; background: black; }
 
-.contact .contact-container { height: 600px; }
+.contact .contact-container { height: 630px; }
 
 .contact .contact-container h1 { color: white; font-family: 'Mina', Courier New, Courier, monospace; text-align: center; padding-top: 40px; }
 
 .contact .contact-container form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; text-align: center; margin: auto; z-index: 43565465; }
 
-.contact .contact-container form input { background: #3e4043; border: 3px solid black; height: 40px; width: 400px; margin: auto auto 20px auto; z-index: 43565465; }
+.contact .contact-container form input { background: #3e4043; border: 3px solid black; height: 40px; width: 35%; margin: auto auto 20px auto; z-index: 43565465; text-indent: 20px; }
 
-.contact .contact-container form textarea { background: #3e4043; border: 3px solid black; height: 200px; overflow: auto; width: 400px; margin: auto auto 20px auto; cursor: pointer; z-index: 435654654; color: white; text-indent: 20px; }
+.contact .contact-container form textarea { background: #3e4043; border: 3px solid black; height: 200px; overflow: auto; width: 40%; margin: auto auto 20px auto; cursor: pointer; z-index: 435654654; color: white; text-indent: 20px; }
 
 .contact .contact-container form p { color: white; font-family: 'Mina', Courier New, Courier, monospace; }
 
-.contact .contact-container form input[type='submit'] { background: #3e4043; text-align: center; margin: auto; color: white; width: 200px; height: 40px; border: 3px solid #D14D42; font-size: 15px; font-family: 'Mina', Courier New, Courier, monospace; }
+.contact .contact-container form input[type='submit'] { background: black; text-align: center; margin: auto; color: white; width: 200px; height: 40px; border: 3px solid #D14D42; font-size: 15px; font-family: 'Mina', Courier New, Courier, monospace; text-indent: 0px; }
 
-@media only screen and (max-width: 549px) { main { width: 100%; }
+@media only screen and (max-width: 549px) { .container-am { display: block; }
+  .container-am .personal-skill { margin: auto; width: 80%; height: 280px; }
+  .container-am .personal-skill h2 { padding-top: 30px; }
+  .container-am .qualifications { margin: auto; width: 80%; height: 280px; }
+  .container-am .qualifications h2 { padding-top: 30px; }
+  .contact { width: 100%; }
+  .contact .contact-container form input { width: 80%; }
+  .contact .contact-container form textarea { width: 80%; }
+  .contact { width: 100%; }
+  .contact .contact-container form input { width: 80%; }
+  .contact .contact-container form textarea { width: 80%; }
+  main { width: 100%; }
   #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 0; }
   .box1 { max-width: 80%; min-width: 50%; background: rgba(0, 0, 0, 0); height: 210px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
   .box1 a { width: 100%; height: 140px; text-decoration: none; }
@@ -91,7 +102,15 @@ main { width: 80%; margin: auto; }
   .about-me h2 { font-size: 22px; }
   .about-me h3 { font-size: 20px; } }
 
-@media only screen and (min-width: 550px) and (max-width: 769px) { main { width: 100%; }
+@media only screen and (min-width: 550px) and (max-width: 769px) { .container-am { display: block; }
+  .container-am .personal-skill { margin: auto; width: 80%; height: 280px; }
+  .container-am .personal-skill h2 { padding-top: 30px; }
+  .container-am .qualifications { margin: auto; width: 80%; height: 280px; }
+  .container-am .qualifications h2 { padding-top: 30px; }
+  .contact { width: 100%; }
+  .contact .contact-container form input { width: 80%; }
+  .contact .contact-container form textarea { width: 80%; }
+  main { width: 100%; }
   #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 0; }
   .box1 { min-width: 40%; max-width: 100%; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
   .box1 a { width: 100%; height: 140px; text-decoration: none; }
@@ -101,7 +120,16 @@ main { width: 80%; margin: auto; }
   .about-me h2 { font-size: 22px; }
   .about-me h3 { font-size: 20px; } }
 
-@media only screen and (min-width: 770px) and (max-width: 1030px) { main { width: 100%; }
+@media only screen and (min-width: 770px) and (max-width: 1030px) { .container-am { display: block; }
+  .container-am .personal-skill { margin: auto; width: 80%; height: 280px; }
+  .container-am .personal-skill h2 { padding-top: 30px; }
+  .container-am .qualifications { margin: auto; width: 80%; height: 280px; }
+  .container-am .qualifications h2 { padding-top: 30px; }
+  .contact { width: 100%; }
+  .contact .contact-container form input { width: 80%; }
+  .contact .contact-container form textarea { width: 80%; }
+  .contact { width: 100%; }
+  main { width: 100%; }
   .box1 { min-width: 40%; max-width: 100%; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
   .box1 a { width: 100%; height: 150px; text-decoration: none; }
   #work-with { background: none; display: -webkit-box; display: -ms-flexbox; display: flex; width: 80%; margin: auto; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 50px auto 50px auto; }
@@ -110,7 +138,8 @@ main { width: 80%; margin: auto; }
   .about-me h2 { font-size: 22px; }
   .about-me h3 { font-size: 20px; } }
 
-@media only screen and (min-width: 1030px) and (max-width: 1400px) { main { width: 100%; }
+@media only screen and (min-width: 1030px) and (max-width: 1400px) { .contact { width: 100%; }
+  main { width: 100%; }
   .box1 { width: 25%; max-width: 50%; min-width: 300px; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
   .box1 a { width: 100%; height: 210px; text-decoration: none; }
   #work-with { background: none; display: -webkit-box; display: -ms-flexbox; display: flex; width: 80%; margin: auto; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 50px auto 50px auto; }

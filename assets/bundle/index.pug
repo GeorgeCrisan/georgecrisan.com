@@ -189,10 +189,11 @@ html(lang='en')
         form(action='https://formspree.io/georgerdp@gmail.com', method='POST')
           input(type='hidden', name='_next', value='https://georgecrisan.com')
           p Your name:
-          input(type='text', name='name') 
+          input(type='text', name='name', placeholder="Your name") 
           p Your email:
-          input(type='email', name='_replyto' placeholder="Your email")
-          textarea(name="message" placeholder="Your message")
+          input(type='email', name='_replyto' , placeholder="Your email")
+          p Message:
+          textarea(name="message" , placeholder="Your message")
           input(type='submit', value='Send')
     footer
 
