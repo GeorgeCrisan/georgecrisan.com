@@ -9,6 +9,8 @@
 
 #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 10%; }
 
+main { width: 80%; margin: auto; }
+
 #particles-js { position: fixed; top: 0; left: 0; background-attachment: fixed; }
 
 .box1 { display: block; text-align: center; width: 29%; max-width: 50%; min-width: 200px; background: white; height: 260px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; margin: 20px; z-index: 100; border-radius: 40px; }
@@ -35,23 +37,87 @@
 
 .icons2 { margin: 0 20px; cursor: pointer; color: white; }
 
-.about-me { margin-top: 40px; }
+.about-me { width: 60%; margin: auto; margin-top: 40px; }
 
-.about-me h2, .about-me h3 { color: white; text-align: center; margin: auto; font-family: 'Mina', Courier New, Courier, monospace; }
+.about-me h2 { color: white; text-align: center; margin: 10px auto; font-family: 'Mina', Courier New, Courier, monospace; text-decoration: underline; text-shadow: 0px 1px 1px white; -webkit-text-decoration-color: black; text-decoration-color: black; font-size: 22px; }
 
-@media only screen and (max-width: 549px) { #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 0; }
+.about-me h3 { color: white; text-align: center; margin: 10px auto; font-family: 'Mina', Courier New, Courier, monospace; text-decoration: underline; text-shadow: 0px 1px 1px white; -webkit-text-decoration-color: black; text-decoration-color: black; font-size: 20px; }
+
+#work-with { background: none; display: -webkit-box; display: -ms-flexbox; display: flex; width: 50%; margin: auto; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 50px auto 50px auto; }
+
+#work-with img { margin: 20px 10px 20px 10px; height: 80px; width: 80px; border-radius: 50px; }
+
+.container-am { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
+
+.container-am .personal-skill { background: black; width: 45%; }
+
+.container-am .personal-skill h2 { color: white; text-align: center; margin: 20px auto; font-family: 'Mina', Courier New, Courier, monospace; text-decoration: underline; text-shadow: 0px 1px 1px white; -webkit-text-decoration-color: black; text-decoration-color: black; font-size: 22px; }
+
+.container-am .personal-skill ul { margin: 20px auto 50px auto; width: 65%; }
+
+.container-am .personal-skill ul li { color: white; text-decoration: none; font-size: 18px; }
+
+.container-am .qualifications { background: black; width: 45%; }
+
+.container-am .qualifications h2 { color: white; text-align: center; margin: 20px auto; font-family: 'Mina', Courier New, Courier, monospace; text-decoration: underline; text-shadow: 0px 1px 1px white; -webkit-text-decoration-color: black; text-decoration-color: black; font-size: 22px; }
+
+.container-am .qualifications ul { margin: 20px auto 50px auto; width: 65%; }
+
+.container-am .qualifications ul li { color: white; text-decoration: none; font-size: 18px; }
+
+.contact { margin: 50px auto 50px auto; width: 80%; background: #3e4043; }
+
+.contact .contact-container { height: 600px; }
+
+.contact .contact-container h1 { color: white; font-family: 'Mina', Courier New, Courier, monospace; text-align: center; padding-top: 40px; }
+
+.contact .contact-container form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; text-align: center; margin: auto; z-index: 43565465; }
+
+.contact .contact-container form input { background: #3e4043; border: 3px solid black; height: 40px; width: 400px; margin: auto auto 20px auto; z-index: 43565465; }
+
+.contact .contact-container form textarea { background: #3e4043; border: 3px solid black; height: 200px; overflow: auto; width: 400px; margin: auto auto 20px auto; cursor: pointer; z-index: 435654654; color: white; text-indent: 20px; }
+
+.contact .contact-container form p { color: white; font-family: 'Mina', Courier New, Courier, monospace; }
+
+.contact .contact-container form input[type='submit'] { background: #3e4043; text-align: center; margin: auto; color: white; width: 200px; height: 40px; border: 3px solid #D14D42; font-size: 15px; font-family: 'Mina', Courier New, Courier, monospace; }
+
+@media only screen and (max-width: 549px) { main { width: 100%; }
+  #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 0; }
   .box1 { max-width: 80%; min-width: 50%; background: rgba(0, 0, 0, 0); height: 210px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
-  .box1 a { width: 100%; height: 140px; text-decoration: none; } }
+  .box1 a { width: 100%; height: 140px; text-decoration: none; }
+  #work-with { background: none; display: -webkit-box; display: -ms-flexbox; display: flex; width: 80%; margin: auto; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 50px auto 50px auto; }
+  #work-with img { margin: 10px 15px 10px 15px; height: 90px; width: 90px; border-radius: 50px; }
+  .about-me { margin-top: 40px; width: 100%; margin: 40px auto auto auto; }
+  .about-me h2 { font-size: 22px; }
+  .about-me h3 { font-size: 20px; } }
 
-@media only screen and (min-width: 550px) and (max-width: 769px) { #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 0; }
+@media only screen and (min-width: 550px) and (max-width: 769px) { main { width: 100%; }
+  #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 0; }
   .box1 { min-width: 40%; max-width: 100%; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
-  .box1 a { width: 100%; height: 140px; text-decoration: none; } }
+  .box1 a { width: 100%; height: 140px; text-decoration: none; }
+  #work-with { background: none; display: -webkit-box; display: -ms-flexbox; display: flex; width: 80%; margin: auto; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 50px auto 50px auto; }
+  #work-with img { margin: 20px 20px 20px 20px; height: 100px; width: 100px; border-radius: 50px; }
+  .about-me { margin-top: 40px; width: 100%; margin: 40px auto auto auto; }
+  .about-me h2 { font-size: 22px; }
+  .about-me h3 { font-size: 20px; } }
 
-@media only screen and (min-width: 770px) and (max-width: 1030px) { .box1 { min-width: 40%; max-width: 100%; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
-  .box1 a { width: 100%; height: 150px; text-decoration: none; } }
+@media only screen and (min-width: 770px) and (max-width: 1030px) { main { width: 100%; }
+  .box1 { min-width: 40%; max-width: 100%; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
+  .box1 a { width: 100%; height: 150px; text-decoration: none; }
+  #work-with { background: none; display: -webkit-box; display: -ms-flexbox; display: flex; width: 80%; margin: auto; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 50px auto 50px auto; }
+  #work-with img { margin: 20px 10px 20px 10px; height: 80px; width: 80px; border-radius: 50px; }
+  .about-me { margin-top: 40px; width: 100%; margin: 40px auto auto auto; }
+  .about-me h2 { font-size: 22px; }
+  .about-me h3 { font-size: 20px; } }
 
-@media only screen and (min-width: 1030px) and (max-width: 1400px) { .box1 { width: 25%; max-width: 50%; min-width: 300px; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
-  .box1 a { width: 100%; height: 210px; text-decoration: none; } }
+@media only screen and (min-width: 1030px) and (max-width: 1400px) { main { width: 100%; }
+  .box1 { width: 25%; max-width: 50%; min-width: 300px; background: white; height: 240px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
+  .box1 a { width: 100%; height: 210px; text-decoration: none; }
+  #work-with { background: none; display: -webkit-box; display: -ms-flexbox; display: flex; width: 80%; margin: auto; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 50px auto 50px auto; }
+  #work-with img { margin: 20px 10px 20px 10px; height: 80px; width: 80px; border-radius: 50px; }
+  .about-me { margin-top: 40px; width: 100%; margin: 40px auto auto auto; }
+  .about-me h2 { font-size: 22px; }
+  .about-me h3 { font-size: 20px; } }
 
 @-webkit-keyframes fadein { 0% { color: #ec87ff; }
   50% { color: #0FFFFF; }
@@ -85,7 +151,7 @@ body { background: -webkit-gradient(linear, left top, right bottom, from(#4c4c4c
 
 .jumbotron-custom .little-box { color: white; font-family: 'Mina', sans-serif; padding: 60px 0px; text-align: center; }
 
-.jumbotron-custom .little-box h1 { font-size: 20px; color: white; text-shadow: 1px 1px 1px #2e6c8a; width: 60%; margin: auto; padding: 80px 10px 0px 10px; }
+.jumbotron-custom .little-box h1 { font-size: 20px; color: white; text-shadow: 0px 1px 1px white; width: 60%; margin: auto; padding: 80px 10px 0px 10px; text-decoration: underline; -webkit-text-decoration-color: black; text-decoration-color: black; }
 
 .jumbotron-custom .little-box p { font-size: 20px; text-shadow: 1px 1px 1px #2e6c8a; width: 60%; margin: auto; padding: 10px; }
 

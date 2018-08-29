@@ -16,15 +16,15 @@
   </head>
   <body>
     <div class="just-parts" id="particles-js"></div><span class="menu-button">Menu</span>
-    <nav class="sidenav" id="mySidenav"><a class="closebtn"> <i class="fa fa-times fa-1x icon-close" aria-hidden="true"></i></a><a href="#">Home</a><a href="#portofolio-links">Portofolio</a><a href="#">About Me</a><a href="#">Contact</a></nav>
+    <nav class="sidenav" id="mySidenav"><a class="closebtn"> <i class="fa fa-times fa-1x icon-close" aria-hidden="true"></i></a><a href="#">Home</a><a href="#portofolio-links">Portofolio</a><a href="#About-extra">About Me</a><a href="#Contact-extra">Contact</a></nav>
     <section class="jumbotron-custom">
       <div class="little-box">
-        <h1>My name is George Crisan and I believe that productivity is the result of a commitment to excellence, intelligent planning, and focused effort.  </h1>
-        <p>
-          Feel free to take a look at my latest projects. 
+        <h1>
+          My name is George Crisan and I believe that productivity is the result of a commitment to excellence, intelligent planning, and focused effort.  
           
           
-        </p>
+          
+        </h1>
       </div>
     </section>
     <main> 
@@ -82,11 +82,48 @@
     <section id="About-extra"></section>
     <section class="about-me"> 
       <h2>Qualifications and Skills </h2>
-      <h3>I work with ... </h3>
+      <h3>I am working with the following technologies. </h3>
       <div id="work-with"></div>
+      <div class="container-am">
+        <div class="personal-skill">
+          <h2>Personal Atributes</h2>
+          <ul> 
+            <li>Reliable. </li>
+            <li>Punctual. </li>
+            <li>Proficient lone worker.</li>
+            <li>Honest.</li>
+            <li>Keen to deliver before time limits.</li>
+            <li>Development of RESTful api.</li>
+          </ul>
+        </div>
+        <div class="qualifications">
+          <h2>Academic Qualifications</h2>
+          <ul> 
+            <li>Coming.</li>
+            <li>Coming. </li>
+            <li>Coming.</li>
+            <li>Coming.</li>
+            <li>Coming.</li>
+            <li>Coming.</li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section id="Contact-extra"></section>
-    <section class="contact"></section>
+    <section class="contact">
+      <div class="contact-container"> 
+        <h1>Contact </h1>
+        <form action="https://formspree.io/georgerdp@email.com" method="POST">
+          <input type="hidden" name="_next" value="https://georgecrisan.com">
+          <p>Your name:</p>
+          <input type="text" name="name">
+          <p>Your email:</p>
+          <input type="email" name="_replyto" placeholder="Your email">
+          <textarea name="message" placeholder="Your message"></textarea>
+          <input type="submit" value="Send">
+        </form>
+      </div>
+    </section>
     <footer></footer>
     <script src="bundle-dist.js" type="text/javascript" crossorigin="anonymous"></script>
     <script src="mainjs-dist.js" type="text/javascript" crossorigin="anonymous"></script>

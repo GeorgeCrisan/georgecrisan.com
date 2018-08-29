@@ -85,11 +85,11 @@ function workwith(){
 
           let node = document.createElement('img');
           node.src = 'assets/images/icons/ico' + i + '.png';
+   
           nodes.push(node);
        }
  
-
-
+ 
          $('#work-with').append(...nodes);
 
      console.log(nodes[5].src,'aici');

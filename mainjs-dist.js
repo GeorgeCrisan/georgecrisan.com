@@ -75,6 +75,7 @@ $(function () {
 
       var node = document.createElement('img');
       node.src = 'assets/images/icons/ico' + _i + '.png';
+
       nodes.push(node);
     }
 
