@@ -218,11 +218,23 @@ $(function () {
   });
 
   window.sr = ScrollReveal();
-  sr.reveal('#portofolio', { duration: 800,
+  sr.reveal('#portofolio', { duration: 300,
     delay: 1000,
     viewFactor: 0.1 });
 
-  sr.reveal('#portofolio-links', { duration: 500,
+  sr.reveal('#work-with', { duration: 100,
+    delay: 1000,
+    viewFactor: 0.1 });
+
+  sr.reveal('.contact', { duration: 100,
+    delay: 1000,
+    viewFactor: 0.1 });
+
+  sr.reveal('.container-am', { duration: 100,
+    delay: 1000,
+    viewFactor: 0.1 });
+
+  sr.reveal('#portofolio-links', { duration: 100,
     delay: 1000,
     viewFactor: 0.1 });
 
