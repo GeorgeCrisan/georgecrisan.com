@@ -19,13 +19,13 @@ main { width: 75%; margin: auto; }
 
 footer p { text-align: center; color: #D14D42; }
 
-.box1 { display: block; text-align: center; width: 28%; max-width: 50%; min-width: 200px; background: white; height: 260px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; -webkit-box-shadow: 0px 1px 5px  black; box-shadow: 0px 1px 5px  black; margin: 10px; z-index: 100; border-radius: 10px; }
+.box1 { display: block; text-align: center; width: 28%; max-width: 50%; min-width: 200px; background: white; height: 260px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; -webkit-box-shadow: 0px 1px 5px  black; box-shadow: 0px 1px 5px  black; margin: 10px; z-index: 100; border-radius: 0px; border: 1px solid rgba(0, 0, 0, 0.9); }
 
-.box1 a { width: 100%; height: 100%; background: black; text-decoration: none; z-index: 100; cursor: pointer; border-radius: 10px; }
+.box1 a { width: 100%; height: 100%; background: black; text-decoration: none; z-index: 100; cursor: pointer; border-radius: 0px; }
 
-.box1 a img { width: 100%; height: 100%; border-radius: 7px; }
+.box1 a img { width: 100%; height: 100%; border-radius: 0px; }
 
-.box1 .cover-to-hide { position: relative; background: rgba(1, 1, 1, 0.9); height: 100%; top: -100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; opacity: 0; z-index: 5; cursor: pointer; -webkit-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; border-radius: 5px; }
+.box1 .cover-to-hide { position: relative; background: rgba(1, 1, 1, 0.9); height: 100%; top: -100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; opacity: 0; z-index: 5; cursor: pointer; -webkit-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; border-radius: 0px; }
 
 .box1 .cover-to-hide i { color: white; }
 
@@ -55,7 +55,7 @@ footer p { text-align: center; color: #D14D42; }
 
 .container-am { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
 
-.container-am .personal-skill { background: black; width: 45%; }
+.container-am .personal-skill { background: rgba(1, 1, 1, 0.3); width: 45%; }
 
 .container-am .personal-skill h2 { color: white; text-align: center; margin: 20px auto; font-family: 'Mina', Courier New, Courier, monospace; text-shadow: 0px 1px 1px white; -webkit-text-decoration-color: black; text-decoration-color: black; font-size: 20px; }
 
@@ -63,7 +63,7 @@ footer p { text-align: center; color: #D14D42; }
 
 .container-am .personal-skill ul li { color: white; text-decoration: none; font-size: 18px; }
 
-.container-am .qualifications { background: black; width: 45%; }
+.container-am .qualifications { background: rgba(1, 1, 1, 0.3); width: 45%; }
 
 .container-am .qualifications h2 { color: white; text-align: center; margin: 20px auto; font-family: 'Mina', Courier New, Courier, monospace; text-shadow: 0px 1px 1px white; -webkit-text-decoration-color: black; text-decoration-color: black; font-size: 20px; }
 
@@ -73,7 +73,7 @@ footer p { text-align: center; color: #D14D42; }
 
 #Contact-extra h2 { color: white; text-align: center; position: relative; top: 20px; font-family: 'Mina', Courier New, Courier, monospace; font-size: 24px; }
 
-.contact { margin: 50px auto 50px auto; width: 57%; background: black; }
+.contact { margin: 50px auto 50px auto; width: 57%; background: rgba(1, 1, 1, 0.3); }
 
 .contact .contact-container { height: 590px; }
 
@@ -87,12 +87,12 @@ footer p { text-align: center; color: #D14D42; }
 
 .contact .contact-container form p { color: white; font-family: 'Mina', Courier New, Courier, monospace; }
 
-.contact .contact-container form input[type='submit'] { background: black; text-align: center; margin: auto; color: white; width: 200px; height: 40px; border: 3px solid #D14D42; font-size: 15px; font-family: 'Mina', Courier New, Courier, monospace; text-indent: 0px; }
+.contact .contact-container form input[type='submit'] { background: rgba(1, 1, 1, 0.3); text-align: center; margin: auto; color: white; width: 200px; height: 40px; border: 3px solid #D14D42; font-size: 15px; font-family: 'Mina', Courier New, Courier, monospace; text-indent: 0px; }
 
 @media only screen and (max-width: 549px) { .container-am { display: block; }
-  .container-am .personal-skill { margin: auto; width: 80%; height: 280px; }
+  .container-am .personal-skill { margin: auto; width: 100%; height: 360px; }
   .container-am .personal-skill h2 { padding-top: 30px; }
-  .container-am .qualifications { margin: auto; width: 80%; height: 280px; }
+  .container-am .qualifications { margin: auto; width: 100%; height: 280px; }
   .container-am .qualifications h2 { padding-top: 30px; }
   .contact { width: 100%; }
   .contact .contact-container form input { width: 80%; }

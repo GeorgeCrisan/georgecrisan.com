@@ -81,7 +81,7 @@ function workwith(){
 
        let nodes = [];
        
-       for(let i = 0; i < 8; i++){
+       for(let i = 0; i < 10; i++){
 
           let node = document.createElement('img');
           node.src = 'assets/images/icons/ico' + i + '.png';
@@ -240,20 +240,20 @@ particlesJS({
 });
 
     window.sr = ScrollReveal();
-    sr.reveal('#portofolio',{ duration: 300,
-        delay: 1000,
+    sr.reveal('#portofolio',{ duration: 400,
+        delay: 500,
         viewFactor: 0.1, });
 
-        sr.reveal('#work-with',{ duration: 100,
-          delay: 1000,
+        sr.reveal('#work-with',{ duration: 400,
+          delay: 500,
           viewFactor: 0.1, });
 
-          sr.reveal('.contact',{ duration: 100,
-            delay: 1000,
+          sr.reveal('.contact',{ duration: 400,
+            delay: 500,
             viewFactor: 0.1, });
           
-          sr.reveal('.container-am',{ duration: 100,
-            delay: 1000,
+          sr.reveal('.container-am',{ duration: 400,
+            delay: 500,
             viewFactor: 0.1, });
   
     sr.reveal('#portofolio-links',{ duration: 100,

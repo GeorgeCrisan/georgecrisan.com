@@ -71,7 +71,7 @@ $(function () {
 
     var nodes = [];
 
-    for (var _i = 0; _i < 8; _i++) {
+    for (var _i = 0; _i < 10; _i++) {
 
       var node = document.createElement('img');
       node.src = 'assets/images/icons/ico' + _i + '.png';
@@ -218,20 +218,20 @@ $(function () {
   });
 
   window.sr = ScrollReveal();
-  sr.reveal('#portofolio', { duration: 300,
-    delay: 1000,
+  sr.reveal('#portofolio', { duration: 400,
+    delay: 500,
     viewFactor: 0.1 });
 
-  sr.reveal('#work-with', { duration: 100,
-    delay: 1000,
+  sr.reveal('#work-with', { duration: 400,
+    delay: 500,
     viewFactor: 0.1 });
 
-  sr.reveal('.contact', { duration: 100,
-    delay: 1000,
+  sr.reveal('.contact', { duration: 400,
+    delay: 500,
     viewFactor: 0.1 });
 
-  sr.reveal('.container-am', { duration: 100,
-    delay: 1000,
+  sr.reveal('.container-am', { duration: 400,
+    delay: 500,
     viewFactor: 0.1 });
 
   sr.reveal('#portofolio-links', { duration: 100,
