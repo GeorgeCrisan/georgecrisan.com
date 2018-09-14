@@ -69,7 +69,9 @@ footer p { text-align: center; color: #D14D42; }
 
 .container-am .qualifications ul { margin: 20px auto 50px auto; width: 65%; }
 
-.container-am .qualifications ul li { color: white; text-decoration: none; font-size: 18px; }
+.container-am .qualifications ul li { color: #D14D42; font-size: 18px; text-align: left; }
+
+.container-am .qualifications ul li p { text-decoration: none; color: white; font-size: 16px; }
 
 #Contact-extra h2 { color: white; text-align: center; position: relative; top: 20px; font-family: 'Mina', Courier New, Courier, monospace; font-size: 24px; }
 
