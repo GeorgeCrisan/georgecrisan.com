@@ -1,6 +1,9 @@
 $(function(){
 console.log('ready to go');
 
+   
+
+ 
 $("a").on('click', function(event) {
 
     // Make sure this.hash has a value before overriding default behavior
@@ -239,6 +242,10 @@ particlesJS({
   "retina_detect": true
 });
 
+setTimeout(() => {
+return  $('.order1 a').css({visibility: 'visible'});
+}, 300);
+
     window.sr = ScrollReveal();
     sr.reveal('#portofolio',{ duration: 400,
         delay: 500,
@@ -259,7 +266,7 @@ particlesJS({
     sr.reveal('#portofolio-links',{ duration: 100,
                                     delay: 1000,
                                     viewFactor: 0.1, });
-
+                              
                                     $("#menu-toggle").click(function(e) {
                                         e.preventDefault();
                                         $("#wrapper").toggleClass("toggled");

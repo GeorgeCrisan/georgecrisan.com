@@ -217,6 +217,10 @@ $(function () {
     "retina_detect": true
   });
 
+  setTimeout(function () {
+    return $('.order1 a').css({ visibility: 'visible' });
+  }, 300);
+
   window.sr = ScrollReveal();
   sr.reveal('#portofolio', { duration: 400,
     delay: 500,

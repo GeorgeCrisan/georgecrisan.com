@@ -5,6 +5,10 @@
 
 .center-class { margin: 0 auto; }
 
+.order1 { opacity: 0.95; }
+
+.order1 a { visibility: hidden; }
+
 .custom-portofolio-container { margin: 0; padding: 0; }
 
 #portofolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 0 10%; }
