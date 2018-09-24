@@ -242,6 +242,8 @@ particlesJS({
   "retina_detect": true
 });
 
+
+
 setTimeout(() => {
 return  $('.order1 a').css({visibility: 'visible'});
 }, 300);
@@ -267,13 +269,13 @@ return  $('.order1 a').css({visibility: 'visible'});
                                     delay: 1000,
                                     viewFactor: 0.1, });
                               
-                                    $("#menu-toggle").click(function(e) {
+                               $("#menu-toggle").click(function(e) {
                                         e.preventDefault();
                                         $("#wrapper").toggleClass("toggled");
                                     });
     
 
-});
+                                  });
 
 
 
