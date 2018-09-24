@@ -302,9 +302,10 @@ header.navbar {
   width: 100%;
   margin: 25px 0 25px 0;
   background: #777;
-  background: -webkit-linear-gradient(300deg, #555 10%, rgba(0, 0, 0, 0) 100%);
+  /*background: -webkit-linear-gradient(300deg, #555 10%, rgba(0, 0, 0, 0) 100%);
   background: -o-linear-gradient(300deg, #555 10%, rgba(0, 0, 0, 0) 100%);
-  background: linear-gradient(150deg, #555 10%, rgba(0, 0, 0, 0) 100%); }
+  background: linear-gradient(150deg, #555 10%, rgba(0, 0, 0, 0) 100%); }*/
+  background: linear-gradient(145deg, #00c1da, #003bca)
 
 .tofill2 {
   height: 4px;
