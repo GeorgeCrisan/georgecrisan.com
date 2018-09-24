@@ -23,13 +23,13 @@ main { width: 75%; margin: auto; }
 
 footer p { text-align: center; color: #D14D42; }
 
-.box1 { display: block; text-align: center; width: 28%; max-width: 50%; min-width: 200px; background: white; height: 260px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; -webkit-box-shadow: 0px 1px 5px  black; box-shadow: 0px 1px 5px  black; margin: 10px; z-index: 100; border-radius: 0px; border: 1px solid rgba(0, 0, 0, 0.9); }
+.box1 { display: block; text-align: center; width: 28%; max-width: 50%; min-width: 200px; background: white; height: 260px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; -webkit-box-shadow: 0px 1px 5px  #003bca; box-shadow: 0px 1px 5px  #003bca; margin: 10px; z-index: 100; border-radius: 0px; border: 1px solid  #003bca; }
 
 .box1 a { width: 100%; height: 100%; background: black; text-decoration: none; z-index: 100; cursor: pointer; border-radius: 0px; }
 
 .box1 a img { width: 100%; height: 100%; border-radius: 0px; }
 
-.box1 .cover-to-hide { position: relative; background: rgba(1, 1, 1, 0.9); height: 100%; top: -100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; opacity: 0; z-index: 5; cursor: pointer; -webkit-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; border-radius: 0px; }
+.box1 .cover-to-hide { position: relative; background: rgba(1, 1, 1, 0.9); background: -webkit-linear-gradient(305deg, #00c1da, #003bca); background: -o-linear-gradient(305deg, #00c1da, #003bca); background: linear-gradient(145deg, #00c1da, #003bca); height: 100%; top: -100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; opacity: 0; z-index: 5; cursor: pointer; -webkit-transition-duration: 0s; -o-transition-duration: 0s; transition-duration: 0s; border-radius: 0px; }
 
 .box1 .cover-to-hide i { color: white; }
 
@@ -87,7 +87,7 @@ footer p { text-align: center; color: #D14D42; }
 
 .contact .contact-container form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; text-align: center; margin: auto; padding: 40px 0 0 0; z-index: 43565465; }
 
-.contact .contact-container form input { background: #3e4043; border: 3px solid black; height: 40px; width: 35%; margin: auto auto 20px auto; z-index: 43565465; text-indent: 20px; }
+.contact .contact-container form input { background: #3e4043; border: 3px solid black; height: 40px; width: 35%; margin: auto auto 20px auto; z-index: 43565465; text-indent: 20px; color: white; }
 
 .contact .contact-container form textarea { background: #3e4043; border: 3px solid black; height: 200px; overflow: auto; width: 40%; margin: auto auto 20px auto; cursor: pointer; z-index: 435654654; color: white; text-indent: 20px; }
 
@@ -194,7 +194,7 @@ body { background: -webkit-gradient(linear, left top, right bottom, from(#4c4c4c
 
 .jumbotron-custom .little-box { color: white; font-family: 'Mina', sans-serif; padding: 60px 0px; text-align: center; }
 
-.jumbotron-custom .little-box h1 { font-size: 20px; color: white; text-shadow: 0px 1px 1px white; width: 60%; margin: auto; padding: 80px 10px 0px 10px; font-family: 'Mina', Courier New, Courier, monospace !important; -webkit-text-decoration-color: blue; text-decoration-color: blue; }
+.jumbotron-custom .little-box h1 { font-size: 20px; color: white; text-shadow: 0px 2px 2px black; width: 60%; margin: auto; padding: 80px 10px 0px 10px; font-family: 'Mina', Courier New, Courier, monospace !important; -webkit-text-decoration-color: blue; text-decoration-color: blue; }
 
 .jumbotron-custom .little-box p { font-size: 20px; text-shadow: 1px 1px 1px #2e6c8a; width: 60%; margin: auto; padding: 10px; }
 
