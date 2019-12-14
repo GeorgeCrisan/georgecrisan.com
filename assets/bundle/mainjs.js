@@ -1,7 +1,5 @@
 $(function(){
-console.log('ready to go');
-
-   
+//console.log('ready to go'); 
 
  
 $("a").on('click', function(event) {
@@ -72,7 +70,7 @@ $('.navbar-nav>a').on('click', function(){
 function runPortofolio(){
       
     _.forEach($('.box1 a img'),function(element,key){
-      console.log(key);
+      //console.log(key);
           $(element).attr('src','assets/images/project' + key + '.jpg');     
           
     });

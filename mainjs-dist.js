@@ -1,7 +1,7 @@
 'use strict';
 
 $(function () {
-  console.log('ready to go');
+  //console.log('ready to go');
 
   $("a").on('click', function (event) {
 
