@@ -43,7 +43,7 @@ $(function () {
     });
   }
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 15; i++) {
     var roller = '.switch' + i;
 
     generateSwitch(roller);
@@ -220,9 +220,9 @@ $(function () {
   }, 300);
 
   window.sr = ScrollReveal();
-  sr.reveal('#portofolio', { duration: 400,
-    delay: 500,
-    viewFactor: 0.1 });
+  sr.reveal('#portofolio', { duration: 300,
+    delay: 400,
+    viewFactor: 0.05 });
 
   sr.reveal('#work-with', { duration: 400,
     delay: 500,
