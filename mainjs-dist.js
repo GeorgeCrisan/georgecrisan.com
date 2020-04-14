@@ -1,6 +1,7 @@
-'use strict';
+"use strict";
 
 $(function () {
+
   $("a").on('click', function (event) {
 
     // Make sure this.hash has a value before overriding default behavior
@@ -59,7 +60,6 @@ $(function () {
   function runPortofolio() {
 
     _.forEach($('.box1 a img'), function (element, key) {
-      console.log(key);
       $(element).attr('src', 'assets/images/project' + key + '.jpg');
     });
   }
@@ -221,7 +221,7 @@ $(function () {
 
   window.sr = ScrollReveal();
   sr.reveal('#portofolio', { duration: 300,
-    delay: 400,
+    delay: 300,
     viewFactor: 0.05 });
 
   sr.reveal('#work-with', { duration: 400,

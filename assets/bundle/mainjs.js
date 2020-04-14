@@ -47,7 +47,7 @@ function generateSwitch(swtich){
 
 }
 
-for(let i = 0 ; i < 10; i++){
+for(let i = 0 ; i < 15; i++){
      let roller = '.switch' + i;
 
      generateSwitch(roller);
@@ -244,9 +244,9 @@ return  $('.order1 a').css({visibility: 'visible'});
 }, 300);
 
     window.sr = ScrollReveal();
-    sr.reveal('#portofolio',{ duration: 400,
-        delay: 500,
-        viewFactor: 0.1, });
+    sr.reveal('#portofolio',{ duration: 300,
+        delay: 300,
+        viewFactor: 0.05, });
 
         sr.reveal('#work-with',{ duration: 400,
           delay: 500,
