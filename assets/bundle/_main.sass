@@ -200,8 +200,9 @@ footer
   display: flex
   justify-content: space-around
   .personal-skill
-    background: rgba(1, 1, 1, 0.5)	
-    width: 45% 
+    background: rgba(1, 1, 1, 0.2)
+    border-radius: 15px 0 0 15px;
+    width: 44% 
     h2
       color: white
       text-align: center 
@@ -213,16 +214,17 @@ footer
       font-size: 20px 
     ul 
       margin: 20px auto 50px auto
-      width: 65%
+      width: 90%
 
       li 
         color: white 
         text-decoration: none 
         font-size: 18px 
   .qualifications  
-    background: rgba(1, 1, 1, 0.5)
+    background: rgba(1, 1, 1, 0.2)
+    border-radius:  0 15px 15px 0;
   
-    width: 45% 
+    width: 44% 
     h2
       color: white
       text-align: center 
@@ -257,7 +259,8 @@ footer
 .contact 
   margin: 50px auto 50px auto 
   width: 57%
-  background: rgba(1, 1, 1, 0.3)
+  background: rgba(1, 1, 1, 0.2)
+  border-radius: 15px;
 
   .contact-container
     height: 590px 
@@ -313,7 +316,17 @@ footer
         font-family:  'Mina', Courier New, Courier, monospace
         text-indent: 0px   
   
-    
+
+@media only screen and (max-width: 730px) 
+  .container-am
+    .personal-skill,
+    .qualifications
+      border-radius: 0px;
+  
+  .contact
+    border-radius: 0px;
+
+ 
 
 @media only screen and (max-width: 549px)
   .container-am
@@ -377,8 +390,8 @@ footer
   
     img 
       margin: 10px 15px 10px 15px
-      height: 90px
-      width: 90px
+      height: 50px
+      width: 50px
       border-radius: 50px  
 
   .about-me 
@@ -388,7 +401,8 @@ footer
     h2
       font-size: 22px  
     h3 
-      font-size: 20px      
+      font-size: 20px     
+
 
 
 @media only screen and (min-width: 550px)  and  (max-width: 769px)  
@@ -456,10 +470,10 @@ footer
     h2
       font-size: 22px  
     h3 
-      font-size: 20px    
+      font-size: 20px   
 
 
- 
+
 @media only screen and (min-width: 770px) and (max-width: 1030px)
   .container-am
     display: block
@@ -523,6 +537,8 @@ footer
       font-size: 22px  
     h3 
       font-size: 20px      
+
+
 
 
 @media only screen and (min-width: 1030px) and (max-width: 1400px) 
