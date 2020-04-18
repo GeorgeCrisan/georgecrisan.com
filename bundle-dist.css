@@ -21,7 +21,11 @@ main { width: 75%; margin: auto; }
 
 .retro { position: relative; top: -20px; font-size: 20px !important; font-family: 'Mina', Courier New, Courier, monospace !important; }
 
-footer p { text-align: center; color: #D14D42; font-size: 18px; text-shadow: 0px 0px 5px black; }
+footer p, footer a { text-align: center; margin: auto; margin-bottom: 32px; color: #5cb85c; font-size: 18px; text-shadow: 0px 0px 5px black; }
+
+footer p:hover, footer a:hover { color: white !important; }
+
+footer p a, footer a a { position: relative; z-index: 333; cursor: pointer; }
 
 .box1 { display: block; text-align: center; width: 28%; max-width: 50%; min-width: 200px; background: rgba(0, 0, 0, 0); height: 250px; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: center; margin: 16px; z-index: 100; border-radius: 0px; }
 
@@ -75,9 +79,9 @@ footer p { text-align: center; color: #D14D42; font-size: 18px; text-shadow: 0px
 
 .container-am .qualifications ul { margin: 20px auto 50px auto; width: 90%; }
 
-.container-am .qualifications ul li { color: #D14D42; font-size: 20px; text-align: left; text-shadow: 0px 0px 5px black; }
+.container-am .qualifications ul li { color: #5cb; font-size: 20px; text-align: left; text-shadow: 0px 0px 1px grey; }
 
-.container-am .qualifications ul li p { text-decoration: none; color: white; font-size: 16px; }
+.container-am .qualifications ul li p { text-decoration: none; color: white; text-decoration: underline; font-size: 16px; }
 
 #Contact-extra h2 { color: white; text-align: center; position: relative; top: 20px; font-family: 'Mina', Courier New, Courier, monospace; font-size: 24px; }
 
@@ -89,13 +93,15 @@ footer p { text-align: center; color: #D14D42; font-size: 18px; text-shadow: 0px
 
 .contact .contact-container form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; text-align: center; margin: auto; padding: 40px 0 0 0; z-index: 43565465; }
 
-.contact .contact-container form input { background: #3e4043; border: 2px solid black; height: 40px; width: 35%; margin: auto auto 20px auto; z-index: 43565465; text-indent: 20px; color: white; }
+.contact .contact-container form input { background: rgba(2, 117, 216, 0.5); border: 2px solid black; height: 40px; width: 35%; margin: auto auto 20px auto; z-index: 43565465; text-indent: 20px; color: white; }
 
-.contact .contact-container form textarea { background: #3e4043; border: 2px solid black; height: 200px; overflow: auto; width: 40%; margin: auto auto 20px auto; cursor: pointer; z-index: 435654654; color: white; text-indent: 20px; }
+.contact .contact-container form textarea { background: rgba(2, 117, 216, 0.5); border: 2px solid black; height: 200px; overflow: auto; width: 40%; margin: auto auto 20px auto; cursor: pointer; z-index: 435654654; color: white; text-indent: 20px; }
 
 .contact .contact-container form p { color: white; font-family: 'Mina', Courier New, Courier, monospace; }
 
-.contact .contact-container form input[type='submit'] { background: rgba(1, 1, 1, 0.3); text-align: center; margin: auto; color: white; width: 200px; height: 40px; border: 3px solid #D14D42; font-size: 15px; font-family: 'Mina', Courier New, Courier, monospace; text-indent: 0px; }
+.contact .contact-container form input[type='submit'] { background: rgba(1, 1, 1, 0.3); text-align: center; cursor: pointer; margin: auto; color: white; width: 200px; height: 40px; border: 3px solid #5cb85c; font-size: 15px; font-family: 'Mina', Courier New, Courier, monospace; text-indent: 0px; }
+
+.qualifications .fa-linkedin:hover { color: #5cb85c; }
 
 @media only screen and (max-width: 730px) { .container-am .personal-skill, .container-am .qualifications { border-radius: 0px; }
   .contact { border-radius: 0px; } }
@@ -166,6 +172,14 @@ footer p { text-align: center; color: #D14D42; font-size: 18px; text-shadow: 0px
   .about-me { margin-top: 40px; width: 100%; margin: 40px auto auto auto; }
   .about-me h2 { font-size: 22px; }
   .about-me h3 { font-size: 20px; } }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: white; font-size: 14px; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: white; font-weight: normal; }
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder { color: white; font-weight: normal; }
+
+input::placeholder, textarea::placeholder { color: white; font-weight: normal; }
 
 @-webkit-keyframes fadein { 0% { color: #ec87ff; }
   50% { color: #0FFFFF; }

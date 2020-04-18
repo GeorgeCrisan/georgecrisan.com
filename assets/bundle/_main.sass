@@ -53,12 +53,19 @@ main
   font-family:  'Mina', Courier New, Courier, monospace !important
 
 footer 
-  p 
+  p,a
     text-align: center
-    color: #D14D42  
+    margin: auto
+    margin-bottom: 32px;
+    color: #5cb85c//#0275D8 
     font-size: 18px
     text-shadow: 0px 0px 5px black
-
+    &:hover 
+      color: white !important
+    a
+      position: relative
+      z-index: 333
+      cursor: pointer
 .box1 
   display: block
   text-align: center
@@ -246,13 +253,14 @@ footer
       margin: 20px auto 50px auto
       width: 90%
       li 
-        color: #D14D42 
+        color: #5cb
         font-size: 20px
         text-align: left
-        text-shadow: 0px 0px 5px black
+        text-shadow: 0px 0px 1px grey
         p 
           text-decoration: none
           color: white
+          text-decoration: underline
           font-size: 16px
 
 #Contact-extra
@@ -289,7 +297,7 @@ footer
       padding: 40px 0 0 0 
       z-index: 43565465
       input 
-        background: #3e4043 
+        background: rgba(2,117,216, 0.5)
         border: 2px solid black
         height: 40px
         width: 35%
@@ -298,7 +306,7 @@ footer
         text-indent: 20px
         color: white
       textarea 
-        background: #3e4043 
+        background: rgba(2,117,216, 0.5)
         border: 2px solid black
         height: 200px
         overflow: auto
@@ -315,16 +323,20 @@ footer
       input[type='submit']
         background: rgba(1, 1, 1, 0.3)
         text-align: center
+        cursor: pointer
         margin: auto
         color: white
         width: 200px  
         height: 40px
-        border: 3px solid #D14D42  
+        border: 3px solid #5cb85c //#0275D8 
         font-size: 15px
         font-family:  'Mina', Courier New, Courier, monospace
         text-indent: 0px   
   
-
+.qualifications
+  .fa-linkedin
+    &:hover 
+      color: #5cb85c
 @media only screen and (max-width: 730px) 
   .container-am
     .personal-skill,
@@ -590,3 +602,22 @@ footer
       font-size: 22px  
     h3 
       font-size: 20px
+
+input,
+textarea
+  &::-webkit-input-placeholder 
+    color: white
+    font-size: 14px
+
+
+input,
+textarea
+  &:-ms-input-placeholder 
+    color: white
+    font-weight: normal
+
+input,
+textarea
+  &::placeholder 
+    color: white
+    font-weight: normal
