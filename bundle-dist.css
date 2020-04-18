@@ -128,10 +128,6 @@ footer p a, footer a a { position: relative; z-index: 333; cursor: pointer; }
   .about-me h3 { font-size: 20px; } }
 
 @media only screen and (min-width: 550px) and (max-width: 769px) { .container-am { display: block; }
-  .container-am .personal-skill { margin: auto; width: 80%; height: 280px; }
-  .container-am .personal-skill h2 { padding-top: 30px; }
-  .container-am .qualifications { margin: auto; width: 80%; height: 380px; }
-  .container-am .qualifications h2 { padding-top: 30px; }
   .contact { width: 100%; }
   .contact .contact-container form input { width: 80%; }
   .contact .contact-container form textarea { width: 80%; }
