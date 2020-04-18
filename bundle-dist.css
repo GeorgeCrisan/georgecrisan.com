@@ -207,7 +207,7 @@ input::placeholder, textarea::placeholder { color: white; font-weight: normal; }
 
 .menu-button { color: #0FFFFF; cursor: pointer; position: fixed; font-size: 20px; right: 0; margin-right: 20px; margin-top: 20px; z-index: 555; background: rgba(24, 41, 53, 0.3); padding: 10px; }
 
-body { background: -webkit-gradient(linear, left top, right bottom, from(#4c4c4c), color-stop(0%, #595959), color-stop(12%, #666666), color-stop(23%, #2c2c2c), color-stop(51%, black), color-stop(58%, #111111), color-stop(72%, #2b2b2b), color-stop(91%, #1c1c1c), to(#131313)); background: -webkit-linear-gradient(left top, #4c4c4c 0%, #595959 0%, #666666 12%, #2c2c2c 23%, black 51%, #111111 58%, #2b2b2b 72%, #1c1c1c 91%, #131313 100%); background: -o-linear-gradient(left top, #4c4c4c 0%, #595959 0%, #666666 12%, #2c2c2c 23%, black 51%, #111111 58%, #2b2b2b 72%, #1c1c1c 91%, #131313 100%); background: linear-gradient(left top, #4c4c4c 0%, #595959 0%, #666666 12%, #2c2c2c 23%, black 51%, #111111 58%, #2b2b2b 72%, #1c1c1c 91%, #131313 100%); background: -webkit-linear-gradient(305deg, #003bca, #00c1da); background: -o-linear-gradient(305deg, #003bca, #00c1da); background: linear-gradient(145deg, #003bca, #00c1da); background: -webkit-linear-gradient(305deg, #00c1da, #003bca); background: -o-linear-gradient(305deg, #00c1da, #003bca); background: linear-gradient(145deg, #00c1da, #003bca); background-attachment: fixed; }
+body { background: -webkit-linear-gradient(145deg, #003bca, #00c1da); background: -o-linear-gradient(145deg, #003bca, #00c1da); background: linear-gradient(305deg, #003bca, #00c1da); background-attachment: fixed; }
 
 .jumbotron-custom { height: 280px; }
 
@@ -217,8 +217,7 @@ body { background: -webkit-gradient(linear, left top, right bottom, from(#4c4c4c
 
 .jumbotron-custom .little-box p { font-size: 20px; text-shadow: 1px 1px 1px #2e6c8a; width: 60%; margin: auto; padding: 10px; }
 
-@media only screen and (max-width: 467px) { body { background-color: rgba(24, 41, 53, 0.9); background: -webkit-linear-gradient(305deg, #00c1da, #003bca); background: -o-linear-gradient(305deg, #00c1da, #003bca); background: linear-gradient(145deg, #00c1da, #003bca); }
-  .sidenav { background-color: rgba(24, 41, 53, 0.9); }
+@media only screen and (max-width: 467px) { .sidenav { background-color: rgba(24, 41, 53, 0.9); }
   .sidenav a { font-size: 18px; }
   .jumbotron-custom { height: 255px; }
   .jumbotron-custom .little-box { color: white; padding: 70px 40px; }
