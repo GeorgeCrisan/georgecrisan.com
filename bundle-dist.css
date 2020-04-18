@@ -106,7 +106,7 @@ footer p a, footer a a { position: relative; z-index: 333; cursor: pointer; }
 @media only screen and (max-width: 730px) { .container-am .personal-skill, .container-am .qualifications { border-radius: 0px; }
   .contact { border-radius: 0px; } }
 
-.box1.order1:last-child { max-width: 50%; }
+@media only screen and (min-width: 700px) { .box1.order1:last-child { max-width: 50%; } }
 
 @media only screen and (max-width: 549px) { .retro { padding-top: 32px; }
   .container-am { display: block; }
