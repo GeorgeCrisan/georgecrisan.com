@@ -56,12 +56,11 @@ html(lang='en')
          
 
       div.container-fluid.custom-portofolio-container
-        h2 Hobby Projects - work experience at
-          span(style="color: white; cursor: pointer; margin-left: 8px; z-index: 333; position: relative; border-bottom: 1px solid white;" href="https://www.linkedin.com/in/george-crisan26/") linkedin.com/in/george-crisan26 
+        h2 Hobby Projects 
         div#portofolio 
           div.box1.order1
             a(href='itms-apps://itunes.apple.com/app/reginfo-mot-uk/1494225687')
-              img(loading="lazy") 
+              img
             a(href='itms-apps://itunes.apple.com/app/reginfo-mot-uk/1494225687', data-analytics-title="open the app").switch0.cover-to-hide
               p RegInfo MOT UK
               div 
@@ -96,8 +95,8 @@ html(lang='en')
               p Made with: KeystoneJS, Pug, SCSS/SASS, Responsive
               p Front-End / Back-end
 
-
-          div.box1.order1
+          //-
+            div.box1.order1
             a(href='https://georgecrisan.github.io/mariusmusan.com/'  target="_blank")
               img(loading="lazy") 
             a(href='https://georgecrisan.github.io/mariusmusan.com/'  target="_blank").switch3.cover-to-hide 
@@ -109,7 +108,7 @@ html(lang='en')
               p Made with: Bootstrap3, Jquery, Sass, Pug, Responsive.
               p Front-End Project.   
 
-          div.box1.order1
+            div.box1.order1
             a(href='https://voting-up.herokuapp.com/'  target="_blank")
               img(loading="lazy")
             a(href='https://voting-up.herokuapp.com/'  target="_blank").switch4.cover-to-hide
@@ -135,7 +134,7 @@ html(lang='en')
               p Front End
 
 
-          div.box1.order1
+          //-div.box1.order1
             a(href='projects/pclock/pclock.html'  target="_blank")            
               img(loading="lazy")
             a(href='projects/wikiViewer/wikiV.html'  target="_blank").switch6.cover-to-hide 
@@ -238,9 +237,8 @@ html(lang='en')
             
         .qualifications
           h2 Work Experience 
-            p(style="font-size: 14px") Listed here 
-              a(style="color: white; cursor: pointer; font-size: 16px; font-weight: normal; position: relative; top: 6px;" href="https://www.linkedin.com/in/george-crisan26/") 
-                i.fab.fa-linkedin.fa-2x.icons
+            a(style="color: white; cursor: pointer; font-size: 16px; font-weight: normal; position: relative; top: 6px;" href="https://www.linkedin.com/in/george-crisan26/") here
+              i.fab.fa-linkedin.fa-2x.icons
           h2 Academic Qualifications
           ul 
               li BACHELOR IN ECONOMICS 2008-2011
