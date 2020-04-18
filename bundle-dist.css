@@ -217,7 +217,8 @@ body { background: -webkit-linear-gradient(145deg, #003bca, #00c1da); background
 
 .jumbotron-custom .little-box p { font-size: 20px; text-shadow: 1px 1px 1px #2e6c8a; width: 60%; margin: auto; padding: 10px; }
 
-@media only screen and (max-width: 467px) { .sidenav { background-color: rgba(24, 41, 53, 0.9); }
+@media only screen and (max-width: 467px) { body { background: #07C; }
+  .sidenav { background-color: rgba(24, 41, 53, 0.9); }
   .sidenav a { font-size: 18px; }
   .jumbotron-custom { height: 255px; }
   .jumbotron-custom .little-box { color: white; padding: 70px 40px; }
